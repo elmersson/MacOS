@@ -2,7 +2,7 @@
 ## Description
 
 ## Todo
-### Figma:
+### :art: Figma:
  - Desktop
 
 | Part | Topic    | Repository                                                    |
