@@ -1,7 +1,7 @@
 # MacOS
 
 ## Todo
-Figma:
+### Figma:
  - Desktop
 
 | Part | Topic    | Repository                                                    |
