@@ -1,4 +1,4 @@
-# MacOS
+# :computer: MacOS
 ## Description
 
 ## Todo
