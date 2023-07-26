@@ -1,7 +1,8 @@
 # MacOS
 
-## Future
-Create a macos interface that mimics Macos in most cases.
+## Todo
+Figma:
+ - Desktop
 
 | Part | Topic    | Repository                                                    |
 | ---- | -------- | ------------------------------------------------------------- |
