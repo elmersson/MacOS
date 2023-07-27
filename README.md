@@ -3,7 +3,9 @@
 
 ## Todo
 ### :art: Figma:
-- [ ] Desktop
+
+### Frontend
+- [ ] init project
 
 | Part | Topic    | Repository                                                    |
 | ---- | -------- | ------------------------------------------------------------- |
