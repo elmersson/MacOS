@@ -4,7 +4,7 @@
 ## Todo
 ### :art: Figma:
 
-### Frontend
+### :technologist: Frontend
 - [ ] init project
 
 | Part | Topic    | Repository                                                    |
