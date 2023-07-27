@@ -2,9 +2,20 @@
 ## Description
 
 ## Todo
-### :art: Figma:
+### :male_detective: Project:
+- [ ] Tech stack
 
-### :technologist: Frontend
+### :art: Figma:
+- [ ] Profile image
+- [ ] Hint
+- [ ] Apple menu
+- [ ] Help
+- [ ] Battery
+- [ ] Wifi
+- [ ] Actionbar
+- [ ] Date and time
+
+### :technologist: Frontend:
 - [ ] init project
 
 | Part | Topic    | Repository                                                    |
