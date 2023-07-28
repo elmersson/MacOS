@@ -19,6 +19,9 @@
 ## Tech-stack
 ### :art: Design: [﻿Figma](https://www.figma.com/file/VCxltAf7wcOtDc6djBIBCD/MacOS?type=design&node-id=2%3A5731&mode=design&t=B1iX5GHDvj0DTduN-1) 
 
+### :man_in_tuxedo: Project: Linear, Eraser.io
+
+### :technologist: Frontend: [NextJS](), [Redux], [TailwindCSS], [TypeScript], [Framer Motion], [react-rnd](https://github.com/bokuweb/react-rnd)
 
 
 <!--- Eraser file: https://app.eraser.io/workspace/CB00jYU2j9Apx2r5tod2 --->
