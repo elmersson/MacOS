@@ -19,7 +19,7 @@
 ## Tech-stack
 ### :art: Design: [﻿Figma](https://www.figma.com/file/VCxltAf7wcOtDc6djBIBCD/MacOS?type=design&node-id=2%3A5731&mode=design&t=B1iX5GHDvj0DTduN-1) 
 
-### :man_in_tuxedo: Project: Linear, Eraser.io
+### :man_in_tuxedo: Project: [Linear](https://linear.app/), [Eraser.io](https://eraser.io/)
 
 ### :technologist: Frontend: [NextJS](https://github.com/vercel/next.js), [Redux](https://github.com/reduxjs/redux), [TailwindCSS](https://github.com/tailwindlabs/tailwindcss), [TypeScript](https://github.com/microsoft/TypeScript), [Framer Motion](https://github.com/framer/motion), [react-rnd](https://github.com/bokuweb/react-rnd)
 
