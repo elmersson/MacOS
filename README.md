@@ -21,7 +21,7 @@
 
 ### :man_in_tuxedo: Project: Linear, Eraser.io
 
-### :technologist: Frontend: [NextJS](), [Redux], [TailwindCSS], [TypeScript], [Framer Motion], [react-rnd](https://github.com/bokuweb/react-rnd)
+### :technologist: Frontend: [NextJS](https://github.com/vercel/next.js), [Redux](https://github.com/reduxjs/redux), [TailwindCSS](https://github.com/tailwindlabs/tailwindcss), [TypeScript](https://github.com/microsoft/TypeScript), [Framer Motion](https://github.com/framer/motion), [react-rnd](https://github.com/bokuweb/react-rnd)
 
 
 <!--- Eraser file: https://app.eraser.io/workspace/CB00jYU2j9Apx2r5tod2 --->
