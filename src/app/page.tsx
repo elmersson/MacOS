@@ -1,4 +1,4 @@
-import Wallpapers from '@/components/Wallpapers';
+import Wallpapers from '@/components/atoms/Wallpapers';
 
 export default function Home() {
   return (
