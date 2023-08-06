@@ -12,7 +12,7 @@ export default function Navbar() {
         <Image src={Apple} alt="apple logo" className="drop-shadow mx-2" />
       </div>
       <div>
-        <Image src={Notch} alt="apple logo" />
+        <Image src={Notch} alt="notch" />
       </div>
       <div className="flex items-center">
         <Battery />
