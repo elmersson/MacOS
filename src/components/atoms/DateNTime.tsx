@@ -40,5 +40,9 @@ export default function DateNTime() {
 
     return () => clearInterval(intervalId); // Clean up on unmount
   }, []);
-  return <p className="text-white text-xs">{currentTime}</p>;
+  return (
+    <p className="text-white text-xs text-shadow-[0_2px_4px_rgba(0,0,0,0.22)] mx-2">
+      {currentTime}
+    </p>
+  );
 }
