@@ -1,6 +1,7 @@
 'use client';
 
 import { useBattery } from '../../hooks/useBattery';
+        
 function mapBatteryStateToRange(batteryState: number) {
   if (batteryState < 0 || batteryState > 1) {
     throw new Error('Battery state must be between 0 and 1');
@@ -64,5 +65,6 @@ export default function Battery() {
         </svg>
       </div>
     </div>
+
   );
 }
