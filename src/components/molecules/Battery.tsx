@@ -19,7 +19,7 @@ export default function Battery() {
   if (!batteryState.isSupported) {
     return (
       <div>
-        <>Battery sensor</>: <span>not supported</span>
+        <p>not supported</p>
       </div>
     );
   }
