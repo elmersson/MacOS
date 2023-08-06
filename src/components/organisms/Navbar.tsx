@@ -7,17 +7,21 @@ import Notch from '../../assets/ui/notch.svg';
 import Image from 'next/image';
 export default function Navbar() {
   return (
-    <div className="flex justify-between bg-slate-700 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10 pb-2">
+    <div className="flex justify-between bg-slate-700 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10 pb-2 px-2 items-center">
       <div className="flex items-center">
-        <Image src={Apple} alt="apple logo" />
+        <Image src={Apple} alt="apple logo" className="drop-shadow mx-2" />
       </div>
       <div>
         <Image src={Notch} alt="apple logo" />
       </div>
       <div className="flex items-center">
         <Battery />
-        <Image src={Wifi} alt="apple logo" />
-        <Image src={ControlCenter} alt="apple logo" />
+        <Image src={Wifi} alt="apple logo" className="drop-shadow mx-2" />
+        <Image
+          src={ControlCenter}
+          alt="apple logo"
+          className="drop-shadow mx-2"
+        />
         <DateNTime />
       </div>
     </div>
