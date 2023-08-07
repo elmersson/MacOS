@@ -8,22 +8,22 @@
 
 ### :male_detective: Project:
 
-- [ ] Tech stack
+- [x] Tech stack
 
 ### :art: Figma:
 
-- [ ] Profile image
-- [ ] Hint
-- [ ] Apple menu
-- [ ] Help
-- [ ] Battery
-- [ ] Wifi
-- [ ] Actionbar
-- [ ] Date and time
+- [x] Profile image
+- [x] Hint
+- [x] Apple menu
+- [x] Help
+- [x] Battery
+- [x] Wifi
+- [x] Actionbar
+- [x] Date and time
 
 ### :technologist: Frontend:
 
-- [ ] init project
+- [x] init project
 
 ## Tech-stack
 

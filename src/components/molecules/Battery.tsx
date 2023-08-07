@@ -22,9 +22,7 @@ export default function Battery() {
   const batteryWidth = mapBatteryStateToRange(batteryState.level).toFixed(0);
 
   const color = (): string => {
-    if (batteryState.charging) return 'rgba(255,255,0,0.92)';
-
-    if (batteryState.level < 0.1) return 'rgba(200, 0, 0, 0.92)';
+    if (batteryState.level < 0.11) return 'rgba(255, 78, 78, 0.92)';
     else return 'rgba(255, 255, 255, 0.92)';
   };
 
