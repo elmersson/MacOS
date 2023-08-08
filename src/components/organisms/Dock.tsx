@@ -10,8 +10,8 @@ import Notes from '@/assets/apps/notes.png';
 
 export default function Dock() {
   return (
-    <div className="fixed bottom-1 left-0 w-full flex justify-center">
-      <ul className="bg-clip-padding backdrop-filter backdrop-blur-3xl bg-neutral-300/40 border border-neutral-100/40 flex rounded-3xl p-1">
+    <div className="fixed bottom-2 left-0 w-full flex justify-center">
+      <ul className="bg-clip-padding backdrop-filter backdrop-blur-md bg-neutral-300/10 border border-neutral-100/20 flex rounded-3xl p-1">
         <li className="flex justify-center">
           <div className="flex flex-col items-center">
             <Image src={Finder} alt="github" className="w-14" />
