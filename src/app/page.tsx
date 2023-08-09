@@ -4,9 +4,9 @@ import Login from '@/components/Pages/Login';
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Wallpapers />
       <Desktop />
-    </main>
+    </>
   );
 }

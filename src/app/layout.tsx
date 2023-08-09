@@ -1,6 +1,8 @@
 import '../style/globals.css';
 import type { Metadata } from 'next';
 import { SFPRO } from '../assets/fonts/SFPRO';
+import DarkModeProvider from '@/providers/DarkModeProvider';
+import ThemeSwitcher from '@/components/atoms/ThemeSwitcher';
 
 const sfpro = SFPRO;
 
@@ -15,8 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={sfpro.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body className={sfpro.className}>
+        <DarkModeProvider>{children}</DarkModeProvider>
+      </body>
     </html>
   );
 }
