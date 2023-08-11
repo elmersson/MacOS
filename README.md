@@ -7,15 +7,18 @@
 ## Todo
 
 ### :male_detective: Project:
-- [] Decide test-flow
+
+- [ ] Decide test-flow
 
 ### :art: Figma:
-- [] How apps looks
+
+- [ ] How apps looks
 
 ### :technologist: Frontend:
-- [] Boot
-- [] SignIn
-- [] Desktop
+
+- [ ] Boot
+- [ ] SignIn
+- [ ] Desktop
 
 ## Tech-stack
 
