@@ -9,16 +9,21 @@
 ### :male_detective: Project:
 
 - [ ] Decide test-flow
+- [ ] Decide test-tools
 
 ### :art: Figma:
 
 - [ ] How apps looks
+- [ ] Boot
+- [ ] Menus
 
 ### :technologist: Frontend:
 
 - [ ] Boot
 - [ ] SignIn
 - [ ] Desktop
+- [ ] Apps
+- [ ] Menus
 
 ## Tech-stack
 
