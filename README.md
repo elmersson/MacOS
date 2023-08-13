@@ -24,6 +24,7 @@
 - [ ] Desktop
 - [ ] Apps
 - [ ] Menus
+- [ ] Darkmode
 
 ## Tech-stack
 
