@@ -7,6 +7,7 @@ export default function Desktop() {
     <div>
       <Navbar />
       <ThemeSwitcher />
+      <p className="text-lg text-accent-2">Hej på deg</p>
       <Dock />
     </div>
   );

@@ -11,7 +11,6 @@ export default function Navbar() {
     <div className="flex justify-between bg-slate-700 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10 pb-2 px-2 relative">
       <div className="flex items-center">
         <Image src={Apple} alt="apple logo" className="drop-shadow mx-2" />
-        <div className="bg-slate-50 dark:bg-slate-700">Mode</div>
       </div>
       <div className="flex justify-center absolute inset-0">
         <Image src={Notch} alt="notch" />
