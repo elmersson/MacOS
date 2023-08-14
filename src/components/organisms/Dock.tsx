@@ -16,7 +16,7 @@ export default function Dock() {
         <li className="flex justify-center">
           <div className="flex flex-col items-center">
             <Image src={Finder} alt="github" className="w-14" />
-            <div className="h-1 w-1 m-0 rounded-full bg-accent-2 mt-1"></div>
+            <div className="h-1 w-1 m-0 rounded-full bg-slate-950/80 dark:bg-slate-50/80 mt-1"></div>
           </div>
         </li>
         <li className="flex justify-center">

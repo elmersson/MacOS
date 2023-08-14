@@ -8,22 +8,23 @@
 
 ### :male_detective: Project:
 
-- [x] Tech stack
+- [ ] Decide test-flow
+- [ ] Decide test-tools
 
 ### :art: Figma:
 
-- [x] Profile image
-- [x] Hint
-- [x] Apple menu
-- [x] Help
-- [x] Battery
-- [x] Wifi
-- [x] Actionbar
-- [x] Date and time
+- [ ] How apps looks
+- [ ] Boot
+- [ ] Menus
 
 ### :technologist: Frontend:
 
-- [x] init project
+- [ ] Boot
+- [ ] SignIn
+- [ ] Desktop
+- [ ] Apps
+- [ ] Menus
+- [ ] Darkmode
 
 ## Tech-stack
 
@@ -31,7 +32,7 @@
 
 ### :man_in_tuxedo: Project: [Linear](https://linear.app/), [Eraser.io](https://eraser.io/)
 
-### :technologist: Frontend: [NextJS](https://github.com/vercel/next.js), [Redux](https://github.com/reduxjs/redux), [TailwindCSS](https://github.com/tailwindlabs/tailwindcss), [TypeScript](https://github.com/microsoft/TypeScript), [Framer Motion](https://github.com/framer/motion), [react-rnd](https://github.com/bokuweb/react-rnd)
+### :technologist: Frontend: [NextJS](https://github.com/vercel/next.js), [Zustand](https://github.com/pmndrs/zustand), [TailwindCSS](https://github.com/tailwindlabs/tailwindcss), [TypeScript](https://github.com/microsoft/TypeScript), [Framer Motion](https://github.com/framer/motion), [react-rnd](https://github.com/bokuweb/react-rnd)
 
 ## Getting Started
 
