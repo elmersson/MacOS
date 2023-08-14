@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import Github from '@/assets/apps/github.png';
 import Finder from '@/assets/apps/finder.png';
@@ -21,43 +22,43 @@ export default function Dock() {
         <li className="flex justify-center">
           <div className="flex flex-col items-center">
             <Image src={LaunchPad} alt="github" className="w-14" />
-            <div className="h-1 w-1 rounded-full bg-slate-950/0 mt-1"></div>
+            <div className="h-1 w-1 rounded-full mt-1"></div>
           </div>
         </li>
         <li className="flex justify-center">
           <div className="flex flex-col items-center">
             <Image src={Safari} alt="github" className="w-14" />
-            <div className="h-1 w-1 rounded-full bg-slate-950/0 mt-1"></div>
+            <div className="h-1 w-1 rounded-full mt-1"></div>
           </div>
         </li>
         <li className="flex justify-center">
           <div className="flex flex-col items-center">
             <Image src={Mail} alt="github" className="w-14" />
-            <div className="h-1 w-1 rounded-full bg-slate-950/0 mt-1"></div>
+            <div className="h-1 w-1 rounded-full mt-1"></div>
           </div>
         </li>
         <li className="flex justify-center">
           <div className="flex flex-col items-center">
             <Image src={Iterm2} alt="github" className="w-14" />
-            <div className="h-1 w-1 rounded-full bg-slate-950/0 mt-1"></div>
+            <div className="h-1 w-1 rounded-full mt-1"></div>
           </div>
         </li>
         <li className="flex justify-center">
           <div className="flex flex-col items-center">
             <Image src={VsCode} alt="github" className="w-14" />
-            <div className="h-1 w-1 rounded-full bg-slate-950/0 mt-1"></div>
+            <div className="h-1 w-1 rounded-full mt-1"></div>
           </div>
         </li>
         <li className="flex justify-center">
           <div className="flex flex-col items-center">
             <Image src={Github} alt="github" className="w-14" />
-            <div className="h-1 w-1 rounded-full bg-slate-950/80 mt-1"></div>
+            <div className="h-1 w-1 rounded-full mt-1"></div>
           </div>
         </li>
         <li className="flex justify-center">
           <div className="flex flex-col items-center">
             <Image src={Notes} alt="github" className="w-14" />
-            <div className="h-1 w-1 rounded-full bg-slate-950/80 mt-1"></div>
+            <div className="h-1 w-1 rounded-full bg-slate-50 dark:bg-slate-900 mt-1"></div>
           </div>
         </li>
       </ul>
