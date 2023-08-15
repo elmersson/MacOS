@@ -9,7 +9,7 @@
 ### :male_detective: Project:
 
 - [ ] Decide test-flow
-- [ ] Decide test-tools
+- [x] Decide test-tools
 
 ### :art: Figma:
 
@@ -32,7 +32,7 @@
 
 ### :man_in_tuxedo: Project: [Linear](https://linear.app/), [Eraser.io](https://eraser.io/)
 
-### :technologist: Frontend: [NextJS](https://github.com/vercel/next.js), [Zustand](https://github.com/pmndrs/zustand), [TailwindCSS](https://github.com/tailwindlabs/tailwindcss), [TypeScript](https://github.com/microsoft/TypeScript), [Framer Motion](https://github.com/framer/motion), [react-rnd](https://github.com/bokuweb/react-rnd)
+### :technologist: Frontend: [NextJS](https://github.com/vercel/next.js), [Zustand](https://github.com/pmndrs/zustand), [TailwindCSS](https://github.com/tailwindlabs/tailwindcss), [TypeScript](https://github.com/microsoft/TypeScript), [Framer Motion](https://github.com/framer/motion), [react-rnd](https://github.com/bokuweb/react-rnd), [Playwright](https://github.com/microsoft/playwright)
 
 ## Getting Started
 
