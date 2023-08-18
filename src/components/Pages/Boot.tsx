@@ -2,9 +2,11 @@
 import Image from 'next/image';
 import Apple from '@/assets/icons/apple.svg';
 import { useState, useEffect } from 'react';
+import { useStore } from '@/lib/store';
 
 export default function Boot() {
   const [progress, setProgress] = useState<number>(0);
+  const { setBooted } = useStore();
 
   useEffect(() => {
     if (progress < 100) {
@@ -13,8 +15,12 @@ export default function Boot() {
       }, 50);
 
       return () => clearInterval(interval);
+    } else {
+      setTimeout(() => {
+        setBooted(true);
+      }, 1000);
     }
-  }, [progress]);
+  }, [progress, setBooted]);
 
   return (
     <div className="min-h-screen w-full flex flex-col justify-center items-center bg-black">

@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import Navbar from '../organisms/Navbar';
 import Cancel from '../../assets/icons/cancel-button-svgrepo-com.svg';
+import { useStore } from '@/lib/store';
 
 export default function Login() {
+  const { setLogedIn } = useStore();
   return (
     <div>
       <Navbar />
@@ -14,6 +16,7 @@ export default function Login() {
         <div className="w-44 h-8 px-4 rounded-2xl bg-sky-200/30 backdrop-blur-sm mt-4 drop-shadow p-1">
           <input
             placeholder="Enter Password"
+            onBlur={() => setLogedIn(true)}
             className=" focus:none outline-none text-white bg-transparent placeholder-sky-50/80 text-shadow"
           />
         </div>

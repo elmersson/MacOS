@@ -1,13 +1,16 @@
+/* eslint-disable no-unused-vars */
 import { StateCreator } from "zustand";
 
 export interface ComputerStatus {
-    booted: boolean;
-    logedIn: boolean;
+    booted: boolean
+    setBooted: (booted: boolean) => void
+    logedIn: boolean
+    setLogedIn: (logedIn: boolean) => void
 }
 
 export const computerStatusSlice: StateCreator<ComputerStatus> = (set) => ({
     booted: false,
-    toggleBooted: () => set((state) => ({ booted: !state.booted})),
+    setBooted: (booted: boolean) => set({ booted}),
     logedIn: false,
-    toggleLogedIn: () => set((state) => ({ logedIn: !state.logedIn})),
+    setLogedIn: (logedIn: boolean) => set({ logedIn}),
 })
