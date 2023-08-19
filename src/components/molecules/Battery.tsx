@@ -10,7 +10,7 @@ export default function Battery() {
 
   return (
     <div className="flex items-center">
-      <p className="text-white text-xs text-shadow mx-1">
+      <p className="text-white text-xs text-shadow">
         {(batteryState.level * 100).toFixed(0)} %
       </p>
       <div className="relative flex items-center">
