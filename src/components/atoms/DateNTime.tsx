@@ -36,9 +36,9 @@ export default function DateNTime() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentTime(getFormattedDate());
-    }, 30000); // Update 30 seconds
+    }, 30000);
 
-    return () => clearInterval(intervalId); // Clean up on unmount
+    return () => clearInterval(intervalId);
   }, []);
   return (
     <p className="text-xs text-slate-50 text-shadow mx-2">{currentTime}</p>
