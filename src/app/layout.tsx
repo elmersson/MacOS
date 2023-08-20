@@ -19,7 +19,12 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body className={sfpro.className}>
-        <DarkModeProvider attribute="class" defaultTheme="system" enableSystem>
+        <DarkModeProvider
+          attribute="class"
+          storageKey="nightwind-mode"
+          defaultTheme="system"
+          enableSystem={true}
+        >
           <main>{children}</main>
         </DarkModeProvider>
       </body>
