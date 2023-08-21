@@ -23,11 +23,11 @@ export default function Boot() {
   }, [progress, setBooted]);
 
   return (
-    <div className="min-h-screen w-full flex flex-col justify-center items-center bg-black">
-      <Image src={Apple} alt="Apple logo" width={80} />
-      <div className="h-1 w-56 rounded-full bg-gray-500 mt-4">
+    <div className="min-h-screen w-full flex flex-col items-center bg-black justify-center">
+      <Image src={Apple} alt="Apple logo" width={130} />
+      <div className="h-1.5 w-64 rounded-full bg-neutral-700/80 border border-neutral-100/20 mt-[5%]">
         <div
-          className="h-1 rounded-full bg-white"
+          className="h-1 rounded-full bg-white border"
           style={{ width: `${progress}%`, transition: 'width 0.5s ease' }}
         ></div>
       </div>
