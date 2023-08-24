@@ -19,12 +19,12 @@
 
 ### :technologist: Frontend:
 
-- [ ] Boot
+- [x] Boot
 - [ ] SignIn
 - [ ] Desktop
 - [ ] Apps
 - [ ] Menus
-- [ ] Darkmode
+- [x] Darkmode
 
 ## Tech-stack
 
