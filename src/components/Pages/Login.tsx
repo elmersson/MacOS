@@ -4,12 +4,13 @@ import Cancel from '../../assets/icons/cancel-button-svgrepo-com.svg';
 import { useStore } from '@/lib/store';
 import { useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
+import AccountImage from '@/assets/images/Rasmus bakgrund.jpg';
 
 export default function Login() {
   const [inputValue, setInputValue] = useState('');
   const [isPasswordCorrect, setIsPasswordCorrect] = useState(true);
 
-  const { setLogedIn } = useStore();
+  const { setLogedIn, setBooted } = useStore();
   const inputAnimationControls = useAnimation();
 
   const password = 'RasmusRocks!!!';
@@ -34,11 +35,24 @@ export default function Login() {
     }
   };
 
+  const handleClick = () => {
+    setBooted(false);
+  };
+
   return (
     <div>
       <Navbar />
       <div className="flex flex-col items-center mt-80">
-        <div className="w-48 h-48 bg-slate-700 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 rounded-full p-2"></div>
+        <div className="w-48 h-48 bg-slate-700 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 rounded-full p-2">
+          <Image
+            src={AccountImage}
+            alt="account image"
+            className="rounded-full drop-shadow"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+          />
+        </div>
         <p className="text-white font-semibold text-2xl text-shadow-lg mt-12">
           Rasmus Elmersson
         </p>
@@ -63,7 +77,10 @@ export default function Login() {
         )}
         <p className="text-white text-shadow-lg mt-2">Enter Password</p>
         <div className="flex flex-col items-center mt-80">
-          <div className="w-9 h-9 bg-slate-700 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 rounded-full p-2">
+          <div
+            className="w-9 h-9 bg-slate-700 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 rounded-full p-2"
+            onClick={handleClick}
+          >
             <Image src={Cancel} alt="cancel" />
           </div>
           <p className="text-white text-shadow text-sm mt-2">Cancel</p>
