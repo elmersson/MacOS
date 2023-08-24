@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import WallpaperDay from '../../assets/images/wallpapers/wallpaper-day.jpg';
-import WallpaperNight from '../../assets/images/wallpapers/wallpaper-night.jpg';
+import WallpaperDay from '../../assets/images/wallpaper-day.jpg';
+import WallpaperNight from '../../assets/images/wallpaper-night.jpg';
 import { useTheme } from 'next-themes';
 
 export default function Wallpapers() {
