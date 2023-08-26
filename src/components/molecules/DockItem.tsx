@@ -1,4 +1,3 @@
-// DockItem.js
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { AppData } from '@/data/Apps';
