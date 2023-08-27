@@ -20,8 +20,8 @@
 ### :technologist: Frontend:
 
 - [x] Boot
-- [ ] SignIn
-- [ ] Desktop
+- [x] SignIn
+- [x] Desktop
 - [ ] Apps
 - [ ] Menus
 - [x] Darkmode
