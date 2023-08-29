@@ -4,8 +4,21 @@ import Navbar from '../organisms/Navbar';
 import Window from '../molecules/Window';
 
 export default function Desktop() {
+  const width =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+  const height =
+    window.innerHeight ||
+    document.documentElement.clientHeight ||
+    document.body.clientHeight;
+
+  console.log(width, height);
   return (
-    <div>
+    <div
+      className="flex flex-col"
+      style={{ height: `${height}px`, width: `${width}px` }}
+    >
       <Navbar />
       <ThemeSwitcher />
       <Window />
