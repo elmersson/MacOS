@@ -2,6 +2,7 @@ import ThemeSwitcher from '../atoms/ThemeSwitcher';
 import Dock from '../organisms/Dock';
 import Navbar from '../organisms/Navbar';
 import Window from '../molecules/Window';
+import WidgetsBar from '../molecules/WidgetsBar';
 
 export default function Desktop() {
   const width =
@@ -21,7 +22,8 @@ export default function Desktop() {
     >
       <Navbar />
       <ThemeSwitcher />
-      <Window />
+      <WidgetsBar />
+      {/* <Window /> */}
       <Dock />
     </div>
   );
