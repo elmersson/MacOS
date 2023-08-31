@@ -9,7 +9,6 @@
 ### :male_detective: Project:
 
 - [ ] Decide test-flow
-- [x] Decide test-tools
 
 ### :art: Figma:
 
@@ -19,12 +18,8 @@
 
 ### :technologist: Frontend:
 
-- [x] Boot
-- [x] SignIn
-- [x] Desktop
 - [ ] Apps
 - [ ] Menus
-- [x] Darkmode
 
 ## Tech-stack
 
