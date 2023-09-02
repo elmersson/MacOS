@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 interface WeatherResponse {
@@ -9,6 +10,7 @@ interface WeatherResponse {
   };
   weather: {
     description: string;
+    icon: string;
   }[];
   name: string;
 }
@@ -28,7 +30,7 @@ export default function WeatherWidget() {
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
-        const apiKey = process.env.OPEN_WEATHER;
+        const apiKey = process.env.NEXT_PUBLIC_OPEN_WEATHER;
         const response = await axios.get(
           `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`
         );
@@ -65,17 +67,23 @@ export default function WeatherWidget() {
   }, [latitude, longitude]);
 
   return (
-    <div className="h-[164px] w-[164px] rounded-2xl p-4 shadow-2xl bg-slate-500">
+    <div className="h-[164px] w-[164px] rounded-2xl p-4 shadow-2xl bg-gradient-to-b from-[#225385] to-[#92caf4]">
       <p className="font-semibold text-base text-white">{weather?.name}</p>
       {weather && (
         <>
           <p className="text-4xl text-white">{`${weather.main.temp.toFixed(
             0
           )}°`}</p>
+          <Image
+            src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+            alt="icon"
+            width={20}
+            height={20}
+          />
           <p className="text-sm mt-2 text-white">
             {capitalizeWords(weather.weather[0].description)}
           </p>
-          <p className="text-xs text-white">{`H:${weather.main.temp_max.toFixed(
+          <p className="text-xs text-white mb-1">{`H:${weather.main.temp_max.toFixed(
             0
           )}° L:${weather.main.temp_min.toFixed(0)}°`}</p>
         </>
