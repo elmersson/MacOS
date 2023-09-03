@@ -71,7 +71,7 @@ export default function WeatherWidget() {
       <p className="font-semibold text-base text-white">{weather?.name}</p>
       {weather && (
         <>
-          <p className="text-4xl text-white">{`${weather.main.temp.toFixed(
+          <p className="text-4xl text-white mb-2">{`${weather.main.temp.toFixed(
             0
           )}°`}</p>
           <Image
