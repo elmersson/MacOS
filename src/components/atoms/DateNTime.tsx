@@ -1,10 +1,5 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-
-const getFormattedDate = (): string => {
-  const now = new Date();
-
+import useClock from '@/hooks/useClock';
+const getFormattedDate = (now: Date): string => {
   const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const months = [
     'Jan',
@@ -31,16 +26,11 @@ const getFormattedDate = (): string => {
 };
 
 export default function DateNTime() {
-  const [currentTime, setCurrentTime] = useState(getFormattedDate);
+  const currentTime = useClock();
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentTime(getFormattedDate());
-    }, 30000);
-
-    return () => clearInterval(intervalId);
-  }, []);
   return (
-    <p className="text-xs text-slate-50 text-shadow mx-2">{currentTime}</p>
+    <p className="text-xs text-slate-50 text-shadow mx-2">
+      {getFormattedDate(currentTime)}
+    </p>
   );
 }
