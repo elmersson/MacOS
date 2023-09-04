@@ -20,6 +20,9 @@
 
 - [ ] Apps
 - [ ] Menus
+  - [ ] WeatherWidget
+  - [ ] ClockWidget
+  - [ ] StockWidget
 
 ## Tech-stack
 
