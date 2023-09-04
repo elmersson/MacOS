@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import {
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+  AreaChart,
+  Area,
+  ReferenceLine,
+} from 'recharts';
 
 interface TimeSeriesData {
   '1. open': string;
@@ -31,34 +39,35 @@ function calculatePriceDifference(stockData: StockResponse) {
   const timeSeries = stockData['Time Series (60min)'];
   const timestamps = Object.keys(timeSeries);
 
-  if (timestamps.length < 2) {
-    return 'N/A'; // Not enough data points to calculate the difference
+  if (timestamps.length < 25) {
+    return 'N/A';
   }
 
-  // Get the opening price of the first timestamp
   const firstTimestamp = timestamps[0];
   const openingPrice = parseFloat(timeSeries[firstTimestamp]['1. open']);
 
-  // Get the closing price of the last timestamp
-  const lastTimestamp = timestamps[timestamps.length - 1];
+  const lastTimestamp = timestamps[24];
   const closingPrice = parseFloat(timeSeries[lastTimestamp]['4. close']);
 
-  // Calculate the price difference
   const priceDifference = closingPrice - openingPrice;
 
-  // Display the price difference with proper formatting
-  return priceDifference.toFixed(2); // Assuming 2 decimal places for the price difference
+  return priceDifference.toFixed(2);
 }
 
-export default function Stock() {
+interface StockProps {
+  symbol: string;
+  name: string;
+}
+
+export default function Stock({ symbol, name }: StockProps) {
   const [stockData, setStockData] = useState<StockResponse | null>(null);
   const [loading, setLoading] = useState(true);
+  let lowestPrice = Infinity; // Initialize with a high value
 
   useEffect(() => {
     const apiKey = process.env.NEXT_PUBLIC_STOCK_API;
-    const symbol = 'AAPL';
 
-    const apiUrl = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${symbol}&interval=1min&apikey=${apiKey}`;
+    const apiUrl = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${symbol}&interval=60min&outputsize=full&apikey=${apiKey}`;
 
     axios
       .get(apiUrl)
@@ -78,35 +87,80 @@ export default function Stock() {
     return <p>Loading...</p>;
   }
 
+  if (!stockData) {
+    return <p>No data available.</p>;
+  }
+
+  const timeSeries = stockData['Time Series (60min)'];
+
+  if (!timeSeries) {
+    return <p>No time series data available.</p>;
+  }
+
+  const chartData = Object.keys(timeSeries).map((timestamp) => {
+    const closePrice = parseFloat(timeSeries[timestamp]['4. close']);
+    if (closePrice < lowestPrice) {
+      lowestPrice = closePrice;
+    }
+    return {
+      timestamp: timestamp,
+      '4. close': closePrice,
+    };
+  });
+
   return (
-    <div className="flex flex-col">
-      {stockData && (
-        <>
-          <div>
-            <p className="text-white text-sm">
-              {stockData['Meta Data']['2. Symbol']}{' '}
-            </p>
-            <p className="text-xs text-slate-500">Apple</p>
-          </div>
-          <div>
-            <p className="text-white text-sm">Dow</p>
-          </div>
-          <div>
-            <p className="text-white text-sm">
-              {stockData['Time Series (60min)'] &&
-                Object.keys(stockData['Time Series (60min)']).length > 0 &&
-                stockData['Time Series (60min)'][
-                  Object.keys(stockData['Time Series (60min)'])[0]
-                ]['4. close']}
-            </p>
-            <p className="text-xs text-slate-500">
-              {stockData['Time Series (60min)'] &&
-                Object.keys(stockData['Time Series (60min)']).length > 0 &&
-                calculatePriceDifference(stockData)}
-            </p>
-          </div>
-        </>
-      )}
+    <div className="flex flex-row">
+      <div className="w-[55%] mr-4">
+        <p className="text-white text-sm">
+          {stockData['Meta Data']['2. Symbol']}{' '}
+        </p>
+        <p className="text-xs text-slate-500">{name}</p>
+      </div>
+      <ResponsiveContainer width="25%" height={50}>
+        <AreaChart width={200} height={500} data={chartData}>
+          <defs>
+            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="1%" stopColor="#258f21" stopOpacity={0.8} />
+              <stop offset="25%" stopColor="#169a49" stopOpacity={0} />
+            </linearGradient>
+            <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="1%" stopColor="#82ca9d" stopOpacity={0.8} />
+              <stop offset="25%" stopColor="#82ca9d" stopOpacity={0} />
+            </linearGradient>
+          </defs>
+          <XAxis hide />
+          <YAxis hide />
+          <Area
+            type="monotone"
+            dataKey="4. close"
+            stroke="#0bb919"
+            fillOpacity={1}
+            fill="url(#colorUv)"
+            strokeWidth={3}
+          />
+          <ReferenceLine
+            y={lowestPrice}
+            stroke="#0bb919"
+            strokeDasharray="3 3"
+          />
+        </AreaChart>
+      </ResponsiveContainer>
+      <div className="ml-4">
+        <p className="text-white text-sm">
+          {stockData['Time Series (60min)'] &&
+            Object.keys(stockData['Time Series (60min)']).length > 0 &&
+            parseFloat(
+              stockData['Time Series (60min)'][
+                Object.keys(stockData['Time Series (60min)'])[0]
+              ]['4. close']
+            ).toFixed(2)}
+        </p>
+        <p className="text-xs text-slate-500">
+          {stockData['Time Series (60min)'] &&
+            Object.keys(stockData['Time Series (60min)']).length > 0 &&
+            calculatePriceDifference(stockData)}
+        </p>
+      </div>
     </div>
   );
 }
