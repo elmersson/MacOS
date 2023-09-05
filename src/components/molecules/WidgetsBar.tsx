@@ -1,5 +1,6 @@
 import CalenderWidget from '../atoms/CalenderWidget';
 import WeatherWidget from '../atoms/WeatherWidget';
+import Clocks from './Clocks';
 import Stocks from './Stocks';
 
 export default function WidgetsBar() {
@@ -10,7 +11,7 @@ export default function WidgetsBar() {
           <CalenderWidget />
           <WeatherWidget />
         </div>
-        <div className="h-[164px] w-[344px]  rounded-2xl p-4 shadow-2xl bg-slate-900"></div>
+        <Clocks />
         <Stocks />
         <div className="flex justify-center">
           <div className="h-[24px] w-[98px] bg-clip-padding backdrop-filter backdrop-blur-md bg-neutral-50/50 rounded-2xl shadow-2xl flex items-center justify-center">
