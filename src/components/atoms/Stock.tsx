@@ -32,11 +32,11 @@ interface TimeSeries {
 
 interface StockResponse {
   'Meta Data': MetaData;
-  'Time Series (60min)': TimeSeries;
+  'Time Series (1min)': TimeSeries;
 }
 
 function calculatePriceDifference(stockData: StockResponse) {
-  const timeSeries = stockData['Time Series (60min)'];
+  const timeSeries = stockData['Time Series (1min)'];
   const timestamps = Object.keys(timeSeries);
 
   if (timestamps.length < 25) {
@@ -57,24 +57,24 @@ function calculatePriceDifference(stockData: StockResponse) {
 interface StockProps {
   symbol: string;
   name: string;
+  ticker: string;
 }
 
-export default function Stock({ symbol, name }: StockProps) {
+export default function Stock({ symbol, name, ticker }: StockProps) {
   const [stockData, setStockData] = useState<StockResponse | null>(null);
   const [loading, setLoading] = useState(true);
-  let lowestPrice = Infinity; // Initialize with a high value
+  let lowestPrice = Infinity;
 
   useEffect(() => {
     const apiKey = process.env.NEXT_PUBLIC_STOCK_API;
 
-    const apiUrl = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${symbol}&interval=60min&outputsize=full&apikey=${apiKey}`;
+    const apiUrl = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${ticker}&interval=60min&apikey=${apiKey}`;
 
     axios
       .get(apiUrl)
       .then((response) => {
         const data: StockResponse = response.data;
         setStockData(data);
-        console.log(stockData);
         setLoading(false);
       })
       .catch((error) => {
@@ -91,7 +91,7 @@ export default function Stock({ symbol, name }: StockProps) {
     return <p>No data available.</p>;
   }
 
-  const timeSeries = stockData['Time Series (60min)'];
+  const timeSeries = stockData['Time Series (1min)'];
 
   if (!timeSeries) {
     return <p>No time series data available.</p>;
@@ -111,9 +111,7 @@ export default function Stock({ symbol, name }: StockProps) {
   return (
     <div className="flex flex-row">
       <div className="w-[55%] mr-4">
-        <p className="text-white text-sm">
-          {stockData['Meta Data']['2. Symbol']}{' '}
-        </p>
+        <p className="text-white text-sm">{symbol}</p>
         <p className="text-xs text-slate-500">{name}</p>
       </div>
       <ResponsiveContainer width="25%" height={50}>
@@ -147,17 +145,17 @@ export default function Stock({ symbol, name }: StockProps) {
       </ResponsiveContainer>
       <div className="ml-4">
         <p className="text-white text-sm">
-          {stockData['Time Series (60min)'] &&
-            Object.keys(stockData['Time Series (60min)']).length > 0 &&
+          {stockData['Time Series (1min)'] &&
+            Object.keys(stockData['Time Series (1min)']).length > 0 &&
             parseFloat(
-              stockData['Time Series (60min)'][
-                Object.keys(stockData['Time Series (60min)'])[0]
+              stockData['Time Series (1min)'][
+                Object.keys(stockData['Time Series (1min)'])[0]
               ]['4. close']
             ).toFixed(2)}
         </p>
         <p className="text-xs text-slate-500">
-          {stockData['Time Series (60min)'] &&
-            Object.keys(stockData['Time Series (60min)']).length > 0 &&
+          {stockData['Time Series (1min)'] &&
+            Object.keys(stockData['Time Series (1min)']).length > 0 &&
             calculatePriceDifference(stockData)}
         </p>
       </div>
