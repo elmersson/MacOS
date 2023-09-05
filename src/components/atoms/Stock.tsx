@@ -32,11 +32,11 @@ interface TimeSeries {
 
 interface StockResponse {
   'Meta Data': MetaData;
-  'Time Series (1min)': TimeSeries;
+  'Time Series (60min)': TimeSeries;
 }
 
 function calculatePriceDifference(stockData: StockResponse) {
-  const timeSeries = stockData['Time Series (1min)'];
+  const timeSeries = stockData['Time Series (60min)'];
   const timestamps = Object.keys(timeSeries);
 
   if (timestamps.length < 25) {
@@ -81,7 +81,7 @@ export default function Stock({ symbol, name, ticker }: StockProps) {
         console.error('Error fetching data:', error);
         setLoading(false);
       });
-  }, []);
+  }, [ticker]);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -91,7 +91,7 @@ export default function Stock({ symbol, name, ticker }: StockProps) {
     return <p>No data available.</p>;
   }
 
-  const timeSeries = stockData['Time Series (1min)'];
+  const timeSeries = stockData['Time Series (60min)'];
 
   if (!timeSeries) {
     return <p>No time series data available.</p>;
@@ -109,13 +109,13 @@ export default function Stock({ symbol, name, ticker }: StockProps) {
   });
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row items-center">
       <div className="w-[55%] mr-4">
         <p className="text-white text-sm">{symbol}</p>
         <p className="text-xs text-slate-500">{name}</p>
       </div>
-      <ResponsiveContainer width="25%" height={50}>
-        <AreaChart width={200} height={500} data={chartData}>
+      <ResponsiveContainer className="chart-container" width="25%" height={50}>
+        <AreaChart width={200} height={50} data={chartData}>
           <defs>
             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
               <stop offset="1%" stopColor="#258f21" stopOpacity={0.8} />
@@ -145,17 +145,17 @@ export default function Stock({ symbol, name, ticker }: StockProps) {
       </ResponsiveContainer>
       <div className="ml-4">
         <p className="text-white text-sm">
-          {stockData['Time Series (1min)'] &&
-            Object.keys(stockData['Time Series (1min)']).length > 0 &&
+          {stockData['Time Series (60min)'] &&
+            Object.keys(stockData['Time Series (60min)']).length > 0 &&
             parseFloat(
-              stockData['Time Series (1min)'][
-                Object.keys(stockData['Time Series (1min)'])[0]
+              stockData['Time Series (60min)'][
+                Object.keys(stockData['Time Series (60min)'])[0]
               ]['4. close']
             ).toFixed(2)}
         </p>
         <p className="text-xs text-slate-500">
-          {stockData['Time Series (1min)'] &&
-            Object.keys(stockData['Time Series (1min)']).length > 0 &&
+          {stockData['Time Series (60min)'] &&
+            Object.keys(stockData['Time Series (60min)']).length > 0 &&
             calculatePriceDifference(stockData)}
         </p>
       </div>
