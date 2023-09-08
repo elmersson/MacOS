@@ -19,9 +19,9 @@
 ### :technologist: Frontend:
 
 - [ ] Apps
-- [ ] Menus
+- [x] Menus
   - [x] WeatherWidget
-  - [ ] ClockWidget
+  - [x] ClockWidget
   - [x] StockWidget
 
 ## Tech-stack
