@@ -109,12 +109,12 @@ export default function Stock({ symbol, name, ticker }: StockProps) {
   });
 
   return (
-    <div className="flex flex-row items-center">
+    <div className="flex flex-row items-center justify-center">
       <div className="w-[55%] mr-4">
         <p className="text-white text-sm">{symbol}</p>
         <p className="text-xs text-slate-500">{name}</p>
       </div>
-      <ResponsiveContainer className="chart-container" width="25%" height={50}>
+      <ResponsiveContainer className="pt-2" width="25%" height={50}>
         <AreaChart width={200} height={50} data={chartData}>
           <defs>
             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">

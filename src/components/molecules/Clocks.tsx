@@ -8,6 +8,7 @@ export default function Clocks() {
         <Clock city="Cupertino" timezone={-7} />
         <Clock city="Tokyo" timezone={9} />
         <Clock city="Sydney" timezone={10} />
+        <Clock city="Paris" timezone={2} />
       </div>
     </div>
   );
