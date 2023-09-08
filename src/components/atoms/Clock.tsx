@@ -1,5 +1,6 @@
 import useClock from '@/hooks/useClock';
 import { useState, useEffect } from 'react';
+import AnalogClock from './AnalogClock';
 
 function calculateDayDifference(date: Date) {
   const currentDate = new Date();
@@ -40,17 +41,17 @@ export default function Clock({ city, timezone }: ClockProps) {
   const [diff, setDiff] = useState<number>(0);
 
   useEffect(() => {
-    const localOffset = -new Date().getTimezoneOffset() / 60;
+    const localOffset = new Date().getTimezoneOffset() / 60;
 
     const dstOffset = isDST() ? 0 : 0;
-    const timeDifference = timezone + dstOffset - localOffset;
+    const timeDifference = timezone + dstOffset + localOffset;
     setDiff(timeDifference);
 
-    const cupertinoTime = new Date(
+    const localTime = new Date(
       currentTime.getTime() + timeDifference * 3600 * 1000
     );
 
-    setTime(cupertinoTime);
+    setTime(localTime);
 
     function isDST() {
       const now = new Date();
@@ -65,10 +66,10 @@ export default function Clock({ city, timezone }: ClockProps) {
 
     const intervalId = setInterval(() => {
       const currentTime = new Date();
-      const cupertinoTime = new Date(
+      const localTime = new Date(
         currentTime.getTime() + timeDifference * 3600 * 1000
       );
-      setTime(cupertinoTime);
+      setTime(localTime);
     }, 1000);
 
     return () => clearInterval(intervalId);
@@ -77,11 +78,13 @@ export default function Clock({ city, timezone }: ClockProps) {
   const dayDifference = calculateDayDifference(time);
 
   return (
-    <div>
-      <p className="text-white">{time.toLocaleTimeString()}</p>
+    <div className="w-[25%] text-center">
+      <AnalogClock time={time} />
       <p className="text-white text-xs">{city}</p>
       <p className="text-xs text-gray-500">{dayDifference}</p>
-      <p className="text-xs text-gray-500">{diff}HRS</p>
+      <p className="text-xs text-gray-500">
+        {diff >= 0 ? `+${diff}` : diff}HRS
+      </p>
     </div>
   );
 }
