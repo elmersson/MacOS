@@ -35,12 +35,12 @@ interface StockResponse {
   'Time Series (60min)': TimeSeries;
 }
 
-function calculatePriceDifference(stockData: StockResponse) {
+function calculatePriceDifference(stockData: StockResponse): [string, boolean] {
   const timeSeries = stockData['Time Series (60min)'];
   const timestamps = Object.keys(timeSeries);
 
   if (timestamps.length < 25) {
-    return 'N/A';
+    return ['0', false];
   }
 
   const firstTimestamp = timestamps[0];
@@ -50,8 +50,9 @@ function calculatePriceDifference(stockData: StockResponse) {
   const closingPrice = parseFloat(timeSeries[lastTimestamp]['4. close']);
 
   const priceDifference = closingPrice - openingPrice;
+  const isPositive = priceDifference >= 0;
 
-  return priceDifference.toFixed(2);
+  return [priceDifference.toFixed(2), isPositive];
 }
 
 interface StockProps {
@@ -108,22 +109,40 @@ export default function Stock({ symbol, name, ticker }: StockProps) {
     };
   });
 
+  const [priceDifference, isPositive] = calculatePriceDifference(stockData);
+
   return (
     <div className="flex flex-row items-center justify-center">
       <div className="w-[55%] mr-4">
         <p className="text-white text-sm">{symbol}</p>
         <p className="text-xs text-slate-500">{name}</p>
       </div>
-      <ResponsiveContainer className="pt-2" width="25%" height={50}>
+      <ResponsiveContainer className="pt-3" width="25%" height={50}>
         <AreaChart width={200} height={50} data={chartData}>
           <defs>
             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="1%" stopColor="#258f21" stopOpacity={0.8} />
-              <stop offset="25%" stopColor="#169a49" stopOpacity={0} />
+              <stop
+                offset="1%"
+                stopColor={isPositive ? '#258f21' : '#8f2121'}
+                stopOpacity={0.8}
+              />
+              <stop
+                offset="25%"
+                stopColor={isPositive ? '#169a49' : '#9a1616'}
+                stopOpacity={0}
+              />
             </linearGradient>
             <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="1%" stopColor="#82ca9d" stopOpacity={0.8} />
-              <stop offset="25%" stopColor="#82ca9d" stopOpacity={0} />
+              <stop
+                offset="1%"
+                stopColor={isPositive ? '#82ca9d' : '#ca8282'}
+                stopOpacity={0.8}
+              />
+              <stop
+                offset="25%"
+                stopColor={isPositive ? '#82ca9d' : '#ca8282'}
+                stopOpacity={0}
+              />
             </linearGradient>
           </defs>
           <XAxis hide />
@@ -131,32 +150,33 @@ export default function Stock({ symbol, name, ticker }: StockProps) {
           <Area
             type="monotone"
             dataKey="4. close"
-            stroke="#0bb919"
+            stroke={isPositive ? '#0bb919' : '#b90b0b'}
             fillOpacity={1}
             fill="url(#colorUv)"
             strokeWidth={3}
           />
           <ReferenceLine
             y={lowestPrice}
-            stroke="#0bb919"
+            stroke={isPositive ? '#0bb919' : '#b90b0b'}
             strokeDasharray="3 3"
           />
         </AreaChart>
       </ResponsiveContainer>
       <div className="ml-4">
         <p className="text-white text-sm">
-          {stockData['Time Series (60min)'] &&
-            Object.keys(stockData['Time Series (60min)']).length > 0 &&
+          {Object.keys(stockData['Time Series (60min)']).length > 0 &&
             parseFloat(
               stockData['Time Series (60min)'][
                 Object.keys(stockData['Time Series (60min)'])[0]
               ]['4. close']
             ).toFixed(2)}
         </p>
-        <p className="text-xs text-slate-500">
-          {stockData['Time Series (60min)'] &&
-            Object.keys(stockData['Time Series (60min)']).length > 0 &&
-            calculatePriceDifference(stockData)}
+        <p
+          className={`text-xs ${
+            isPositive ? 'text-[#0bb919]' : 'text-[#b90b0b]'
+          }`}
+        >
+          {priceDifference}
         </p>
       </div>
     </div>
