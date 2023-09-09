@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { FaLocationArrow } from 'react-icons/fa';
 
 interface WeatherResponse {
   main: {
@@ -68,7 +69,9 @@ export default function WeatherWidget() {
 
   return (
     <div className="h-[164px] w-[164px] rounded-2xl p-4 shadow-2xl bg-gradient-to-b from-[#225385] to-[#92caf4]">
-      <p className="font-semibold text-base text-white">{weather?.name}</p>
+      <p className="font-semibold text-base text-white">
+        {weather?.name} <FaLocationArrow size="0.6em" />
+      </p>
       {weather && (
         <>
           <p className="text-4xl text-white mb-2">{`${weather.main.temp.toFixed(
