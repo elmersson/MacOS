@@ -1,4 +1,6 @@
 import useClock from '@/hooks/useClock';
+import { useState } from 'react';
+import WidgetsBar from '../molecules/WidgetsBar';
 const getFormattedDate = (now: Date): string => {
   const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const months = [
@@ -26,11 +28,26 @@ const getFormattedDate = (now: Date): string => {
 };
 
 export default function DateNTime() {
+  const [isWidgetVisible, setIsWidgetVisible] = useState<boolean>(false);
   const currentTime = useClock();
 
+  const handleClick = () => {
+    setIsWidgetVisible(!isWidgetVisible);
+  };
+
   return (
-    <p className="text-xs text-slate-50 text-shadow mx-2">
-      {getFormattedDate(currentTime)}
-    </p>
+    <>
+      <div
+        className={`px-2 py-1 rounded-lg ${
+          isWidgetVisible ? 'bg-slate-100/20' : ''
+        }`}
+        onClick={handleClick}
+      >
+        <p className="text-xs text-slate-300 text-shadow">
+          {getFormattedDate(currentTime)}
+        </p>
+      </div>
+      <WidgetsBar isVisible={isWidgetVisible} />
+    </>
   );
 }
