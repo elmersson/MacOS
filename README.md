@@ -19,10 +19,12 @@
 ### :technologist: Frontend:
 
 - [ ] Apps
-- [x] Menus
-  - [x] WeatherWidget
-  - [x] ClockWidget
-  - [x] StockWidget
+- [ ] Menus
+  - [x] Widgetmenu
+  - [ ] Control center
+  - [ ] Wifi
+  - [ ] Battery
+  - [ ] Hide menu
 
 ## Tech-stack
 
