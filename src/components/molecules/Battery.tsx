@@ -1,15 +1,25 @@
-'use client';
-
 import Image from 'next/image';
 import { useBattery } from '../../hooks/useBattery';
 import Charging from '@/assets/icons/charging.svg';
 import BatteryLevelIndicator from '../atoms/BatteryLevelIndicator';
+import { useState } from 'react';
+import BatteryMenu from '../atoms/BatteryMenu';
 
 export default function Battery() {
   const batteryState = useBattery();
+  const [isBatteryVisible, setIsBatteryVisible] = useState<boolean>(false);
+
+  const handleClick = () => {
+    setIsBatteryVisible(!isBatteryVisible);
+  };
 
   return (
-    <div className="flex items-center">
+    <div
+      className={`flex items-center px-2.5 py-1 rounded-md ${
+        isBatteryVisible ? 'bg-slate-100/20' : ''
+      }`}
+      onClick={handleClick}
+    >
       <p className="text-white text-xs text-shadow">
         {(batteryState.level * 100).toFixed(0)} %
       </p>
@@ -25,6 +35,10 @@ export default function Battery() {
           />
         )}
       </div>
+      <BatteryMenu
+        isVisible={isBatteryVisible}
+        charging={batteryState.charging}
+      />
     </div>
   );
 }

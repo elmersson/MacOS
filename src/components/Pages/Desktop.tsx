@@ -1,3 +1,4 @@
+import BatteryMenu from '../atoms/BatteryMenu';
 import ThemeSwitcher from '../atoms/ThemeSwitcher';
 import Dock from '../organisms/Dock';
 import Navbar from '../organisms/Navbar';
@@ -14,7 +15,7 @@ export default function Desktop() {
 
   return (
     <div
-      className="flex flex-col"
+      className="flex flex-col overflow-hidden"
       style={{ height: `${height}px`, width: `${width}px` }}
     >
       <Navbar />

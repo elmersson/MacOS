@@ -31,20 +31,26 @@ export default function Navbar() {
             />
           )}
         </div>
-        <div className="flex items-center space-x-5">
+        <div className="flex items-center">
           <Battery />
-          <Image
-            src={Wifi}
-            height={13}
-            alt="wifi logo"
-            className="drop-shadow"
-          />
-          <Image
-            src={ControlCenter}
-            height={13}
-            alt="control center logo"
-            className="drop-shadow"
-          />
+          <div className="px-2.5">
+            <Image
+              src={Wifi}
+              height={13}
+              alt="wifi logo"
+              className="drop-shadow"
+            />
+          </div>
+
+          <div className="px-2.5">
+            <Image
+              src={ControlCenter}
+              height={13}
+              alt="control center logo"
+              className="drop-shadow"
+            />
+          </div>
+
           <DateNTime />
         </div>
       </div>

@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import React from 'react';
 import CalenderWidget from '../atoms/CalenderWidget';
 import WeatherWidget from '../atoms/WeatherWidget';
 import Clocks from './Clocks';
@@ -9,7 +8,7 @@ interface WidgetBarProps {
   isVisible: boolean;
 }
 
-const WidgetsBar: React.FC<WidgetBarProps> = ({ isVisible }) => {
+export default function WidgetsBar({ isVisible }: WidgetBarProps) {
   const variants = {
     hidden: {
       x: '100%',
@@ -60,4 +59,3 @@ const WidgetsBar: React.FC<WidgetBarProps> = ({ isVisible }) => {
   );
 };
 
-export default WidgetsBar;

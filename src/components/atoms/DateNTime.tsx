@@ -38,7 +38,7 @@ export default function DateNTime() {
   return (
     <>
       <div
-        className={`px-2 py-1 rounded-lg ${
+        className={`px-2.5 py-1 rounded-md ${
           isWidgetVisible ? 'bg-slate-100/20' : ''
         }`}
         onClick={handleClick}
