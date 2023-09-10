@@ -1,8 +1,6 @@
 import ThemeSwitcher from '../atoms/ThemeSwitcher';
 import Dock from '../organisms/Dock';
 import Navbar from '../organisms/Navbar';
-import Window from '../molecules/Window';
-import WidgetsBar from '../molecules/WidgetsBar';
 
 export default function Desktop() {
   const width =
@@ -14,7 +12,6 @@ export default function Desktop() {
     document.documentElement.clientHeight ||
     document.body.clientHeight;
 
-  console.log(width, height);
   return (
     <div
       className="flex flex-col"
@@ -22,8 +19,6 @@ export default function Desktop() {
     >
       <Navbar />
       <ThemeSwitcher />
-      <WidgetsBar />
-      {/* <Window /> */}
       <Dock />
     </div>
   );
