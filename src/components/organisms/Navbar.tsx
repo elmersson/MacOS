@@ -1,11 +1,10 @@
 import DateNTime from '../atoms/DateNTime';
 import Battery from '../molecules/Battery';
 import Apple from '../../assets/icons/apple.svg';
-import ControlCenter from '../../assets/icons/controlCenter.svg';
 import Wifi from '../../assets/icons/wifi.svg';
-import Notch from '../../assets/ui/notch.svg';
 import Image from 'next/image';
 import { useStore } from '@/lib/store';
+import ControlCenter from '../molecules/ControlCenter';
 
 export default function Navbar() {
   const { logedIn } = useStore();
@@ -42,15 +41,7 @@ export default function Navbar() {
             />
           </div>
 
-          <div className="px-2.5">
-            <Image
-              src={ControlCenter}
-              height={13}
-              alt="control center logo"
-              className="drop-shadow"
-            />
-          </div>
-
+          <ControlCenter />
           <DateNTime />
         </div>
       </div>

@@ -1,4 +1,3 @@
-import BatteryMenu from '../atoms/BatteryMenu';
 import ThemeSwitcher from '../atoms/ThemeSwitcher';
 import Dock from '../organisms/Dock';
 import Navbar from '../organisms/Navbar';
