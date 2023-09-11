@@ -57,5 +57,4 @@ export default function WidgetsBar({ isVisible }: WidgetBarProps) {
       )}
     </AnimatePresence>
   );
-};
-
+}
