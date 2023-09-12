@@ -15,6 +15,8 @@ module.exports = {
   darkMode: ['class'],
   theme: {
     extend: {
+      fontSize: {
+        'xxs': ['0.6rem', '0.7rem'],},
       textShadow: {
         sm: '0 1px 2px var(--tw-shadow-color)',
         DEFAULT: '0 2px 4px rgba(0,0,0,0.22)',
