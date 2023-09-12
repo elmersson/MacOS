@@ -41,7 +41,7 @@ export default function BatteryMenu({ isVisible, charging }: BatteryMenuProps) {
               Using Significant Energy
             </p>
             <div className="border-b border-gray-500/20"></div>
-            <p className="text-sm">Battery Settings...</p>
+            <p className="text-xs font-bold">Battery Settings...</p>
           </div>
         </motion.div>
       )}
