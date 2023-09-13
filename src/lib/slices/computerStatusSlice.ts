@@ -8,6 +8,12 @@ export interface ComputerStatus {
     setLogedIn: (logedIn: boolean) => void
     darkmode: boolean
     setDarkmode: (darkmode: boolean) => void
+    wifi: boolean
+    setWifi: (wifi: boolean) => void
+    bluetooth: boolean
+    setBluetooth: (bluetooth: boolean) => void
+    airdrop: boolean
+    setAirdrop: (airdrop: boolean) => void
 }
 
 export const computerStatusSlice: StateCreator<ComputerStatus> = (set) => ({
@@ -16,5 +22,11 @@ export const computerStatusSlice: StateCreator<ComputerStatus> = (set) => ({
     logedIn: false,
     setLogedIn: (logedIn: boolean) => set({ logedIn}),
     darkmode: false,
-    setDarkmode: (darkmode: boolean) => set({ darkmode})
+    setDarkmode: (darkmode: boolean) => set({ darkmode}),
+    wifi: true,
+    setWifi: (wifi: boolean) => set({ wifi}),
+    bluetooth: true,
+    setBluetooth: (bluetooth: boolean) => set({ bluetooth}),
+    airdrop: true,
+    setAirdrop: (airdrop: boolean) => set({ airdrop})
 })
