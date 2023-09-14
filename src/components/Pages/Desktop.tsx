@@ -1,4 +1,3 @@
-import ThemeSwitcher from '../atoms/ThemeSwitcher';
 import Dock from '../organisms/Dock';
 import Navbar from '../organisms/Navbar';
 
@@ -18,7 +17,6 @@ export default function Desktop() {
       style={{ height: `${height}px`, width: `${width}px` }}
     >
       <Navbar />
-      <ThemeSwitcher />
       <Dock />
     </div>
   );
