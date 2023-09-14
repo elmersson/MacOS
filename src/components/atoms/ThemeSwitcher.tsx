@@ -4,7 +4,7 @@ import { IoSunny } from 'react-icons/io5';
 import { IoMdMoon } from 'react-icons/io';
 import { useStore } from '@/lib/store';
 
-export default function Darkmode() {
+export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const { darkmode, setDarkmode } = useStore();
