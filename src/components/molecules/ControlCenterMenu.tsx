@@ -1,8 +1,9 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { IoMan, IoPauseSharp, IoPlayForward, IoApps } from 'react-icons/io5';
+import { IoPauseSharp, IoPlayForward, IoApps } from 'react-icons/io5';
 import Image from 'next/image';
 import Stockholmsvy from '../../assets/images/stockholmsvy.jpeg';
 import ConnectControl from './ConnectControl';
+import Darkmode from '../atoms/DarkMode';
 
 interface ControlCenterMenuProps {
   isVisible: boolean;
@@ -39,14 +40,7 @@ export default function ControlCenterMenu({
             <div className="flex flex-row space-x-2">
               <ConnectControl />
               <div className="flex flex-col space-y-2">
-                <div className="rounded-md px-3 py-4 w-[100%] h-[100%] bg-clip-padding backdrop-filter backdrop-blur-3xl bg-slate-200/10 shadow-md flex flex-row items-center space-x-2">
-                  <div className="h-7 w-7 bg-[#167AE5] rounded-full flex justify-center items-center">
-                    <IoMan style={{ color: 'white' }} />
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold">Work</p>
-                  </div>
-                </div>
+                <Darkmode />
                 <div className="flex flex-row space-x-2">
                   <div className="rounded-md px-3 py-1 w-[100%] bg-clip-padding backdrop-filter backdrop-blur-3xl bg-slate-200/10 shadow-md flex justify-center items-center flex-col">
                     <div className="flex justify-center items-center py-1">
