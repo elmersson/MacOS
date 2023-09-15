@@ -14,6 +14,8 @@ export interface ComputerStatus {
     setBluetooth: (bluetooth: boolean) => void
     airdrop: boolean
     setAirdrop: (airdrop: boolean) => void
+    volume: number
+    setVolume: (volume: number) => void
 }
 
 export const computerStatusSlice: StateCreator<ComputerStatus> = (set) => ({
@@ -28,5 +30,7 @@ export const computerStatusSlice: StateCreator<ComputerStatus> = (set) => ({
     bluetooth: true,
     setBluetooth: (bluetooth: boolean) => set({ bluetooth}),
     airdrop: true,
-    setAirdrop: (airdrop: boolean) => set({ airdrop})
+    setAirdrop: (airdrop: boolean) => set({ airdrop}),
+    volume: 50,
+    setVolume: (volume: number) => set({ volume})
 })
