@@ -16,6 +16,8 @@ export interface ComputerStatus {
     setAirdrop: (airdrop: boolean) => void
     volume: number
     setVolume: (volume: number) => void
+    display: number
+    setDisplay: (display: number) => void
 }
 
 export const computerStatusSlice: StateCreator<ComputerStatus> = (set) => ({
@@ -32,5 +34,7 @@ export const computerStatusSlice: StateCreator<ComputerStatus> = (set) => ({
     airdrop: true,
     setAirdrop: (airdrop: boolean) => set({ airdrop}),
     volume: 50,
-    setVolume: (volume: number) => set({ volume})
+    setVolume: (volume: number) => set({ volume}),
+    display: 80,
+    setDisplay: (display: number) => set({ display}),
 })
