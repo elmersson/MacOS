@@ -5,6 +5,7 @@ import Stockholmsvy from '../../assets/images/stockholmsvy.jpeg';
 import ConnectControl from './ConnectControl';
 import ThemeSwitcher from '../atoms/ThemeSwitcher';
 import Sound from '../atoms/Sound';
+import Display from '../atoms/Display';
 
 interface ControlCenterMenuProps {
   isVisible: boolean;
@@ -62,18 +63,7 @@ export default function ControlCenterMenu({
                 </div>
               </div>
             </div>
-            <div className="rounded-md px-3 py-2 w-[100%] bg-clip-padding backdrop-filter backdrop-blur-3xl bg-slate-200/10 shadow-md">
-              <div className="space-y-2">
-                <p className="text-xs font-bold">Display</p>
-                <input
-                  className="w-full appearance-none rounded-lg overflow-hidden bg-clip-padding backdrop-filter backdrop-blur-3xl bg-slate-200/30 shadow-sm"
-                  type="range"
-                  min={0}
-                  max={100}
-                  step={1}
-                ></input>
-              </div>
-            </div>
+            <Display />
             <Sound />
             <div className="rounded-md px-3 py-3 w-[100%] bg-clip-padding backdrop-filter backdrop-blur-3xl bg-slate-200/10 shadow-md">
               <div className="flex flex-row justify-center items-center">
