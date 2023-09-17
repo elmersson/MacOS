@@ -23,7 +23,7 @@
   - [x] Widgetmenu
   - [ ] Control center
   - [ ] Wifi
-  - [ ] Battery
+  - [x] Battery
   - [ ] Hide menu
 
 ## Tech-stack
