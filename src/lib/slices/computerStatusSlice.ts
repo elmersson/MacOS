@@ -18,6 +18,8 @@ export interface ComputerStatus {
     setVolume: (volume: number) => void
     display: number
     setDisplay: (display: number) => void
+    isPlaying: boolean
+    setIsPlaying: (isPlaying: boolean) => void
 }
 
 export const computerStatusSlice: StateCreator<ComputerStatus> = (set) => ({
@@ -37,4 +39,6 @@ export const computerStatusSlice: StateCreator<ComputerStatus> = (set) => ({
     setVolume: (volume: number) => set({ volume}),
     display: 80,
     setDisplay: (display: number) => set({ display}),
+    isPlaying: false,
+    setIsPlaying: (isPlaying: boolean) => set({ isPlaying })
 })
