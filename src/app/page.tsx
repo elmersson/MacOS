@@ -6,23 +6,24 @@ import Wallpapers from '@/components/atoms/Wallpapers';
 import { useStore } from '@/lib/store';
 
 export default function Home() {
-  const { booted, logedIn } = useStore();
+  const { booted, logedIn, display } = useStore();
+  const opacity = display * 0.01;
 
   if (!booted) {
     return <Boot />;
   } else if (!logedIn) {
     return (
-      <>
+      <div style={{ opacity }}>
         <Login />
         <Wallpapers />
-      </>
+      </div>
     );
   } else {
     return (
-      <>
+      <div style={{ opacity }}>
         <Desktop />
         <Wallpapers />
-      </>
+      </div>
     );
   }
 }

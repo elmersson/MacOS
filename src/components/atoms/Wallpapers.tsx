@@ -5,8 +5,9 @@ import { useTheme } from 'next-themes';
 
 export default function Wallpapers() {
   const { theme } = useTheme();
+
   return (
-    <div className="absolute inset-0 -z-50">
+    <div className={`absolute inset-0 -z-50 bg-black`}>
       <Image
         src={theme === 'light' ? WallpaperDay : WallpaperNight}
         alt="background image"

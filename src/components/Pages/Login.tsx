@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import Navbar from '../organisms/Navbar';
 import Cancel from '../../assets/icons/cancel-button-svgrepo-com.svg';
