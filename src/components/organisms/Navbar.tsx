@@ -5,6 +5,7 @@ import Wifi from '../../assets/icons/wifi.svg';
 import Image from 'next/image';
 import { useStore } from '@/lib/store';
 import ControlCenter from '../molecules/ControlCenter';
+import HiddenNavbar from '../atoms/HiddenNavbar';
 
 export default function Navbar() {
   const { logedIn } = useStore();
@@ -31,6 +32,7 @@ export default function Navbar() {
           )}
         </div>
         <div className="flex items-center">
+          {logedIn && <HiddenNavbar />}
           <Battery />
           <div className="px-2.5">
             <Image
@@ -40,7 +42,6 @@ export default function Navbar() {
               className="drop-shadow"
             />
           </div>
-
           <ControlCenter />
           <DateNTime />
         </div>
