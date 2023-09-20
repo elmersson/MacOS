@@ -37,7 +37,7 @@ export const computerStatusSlice: StateCreator<ComputerStatus> = (set) => ({
     setAirdrop: (airdrop: boolean) => set({ airdrop}),
     volume: 50,
     setVolume: (volume: number) => set({ volume}),
-    display: 80,
+    display: 100,
     setDisplay: (display: number) => set({ display}),
     isPlaying: false,
     setIsPlaying: (isPlaying: boolean) => set({ isPlaying })
