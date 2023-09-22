@@ -9,6 +9,7 @@ import HiddenNavbar from '../atoms/HiddenNavbar';
 
 export default function Navbar() {
   const { logedIn } = useStore();
+
   return (
     <>
       {/* <div className="fixed inset-x-0 top-0 flex justify-center -z-50">

@@ -1,7 +1,11 @@
 import { useStore } from '@/lib/store';
 import { MdWifiTethering } from 'react-icons/md';
 
-export default function Sound() {
+interface SoundProps {
+  // eslint-disable-next-line no-unused-vars
+  setAudioVolume: (newVolume: number) => void;
+}
+export default function Sound({ setAudioVolume }: SoundProps) {
   const { airdrop, setAirdrop, volume, setVolume } = useStore();
 
   const handleAirdropClick = () => {
@@ -11,6 +15,7 @@ export default function Sound() {
   const handleVolumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newVolume = parseInt(event.target.value, 10);
     setVolume(newVolume);
+    setAudioVolume(newVolume / 100);
   };
 
   return (
