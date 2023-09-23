@@ -2,47 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-.shake {
-    animation: shake 0.4s;
-  }
-  
-  @keyframes shake {
-    0%, 100% {
-      transform: translateX(0);
+  @layer base {
+    .menubg {
+      background-clip: padding-box;
+      backdrop-filter: blur(1.5rem);
+      background-color: rgb(226 232 240 / 0.8);
+      border-radius: 0.4rem;
+      padding: 0.75rem
     }
-    25% {
-      transform: translateX(-10px);
+    
+    .dark .menubg {
+      background-color: rgba(114, 105, 105, 0.8);
     }
-    50% {
-      transform: translateX(10px);
-    }
-    75% {
-      transform: translateX(-10px);
-    }
-  }
-
-  .clock {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .analog-clock {
-      width: 50px;
-      height: 50px;
-      border-radius: 25px;
-      position: relative;
-      .dial {
-        position: absolute;
-        left: 50%;
-        width: 25px; 
-        height: 25px;
-        transform-origin: bottom left;
-        &.hours {
-          width: 17.5px;
-          height: 17.5px; 
-          top: 7.5px; 
+    
+    .clock {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .analog-clock {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        position: relative;
+        .dial {
+          position: absolute;
+          left: 50%;
+          width: 25px; 
+          height: 25px;
+          transform-origin: bottom left;
+          &.hours {
+            width: 17.5px;
+            height: 17.5px; 
+            top: 7.5px; 
+          }
         }
+      }
+    }
+
+    .shake {
+      animation: shake 0.4s;
+    }
+    
+    @keyframes shake {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(-10px);
+      }
+      50% {
+        transform: translateX(10px);
+      }
+      75% {
+        transform: translateX(-10px);
       }
     }
   }
