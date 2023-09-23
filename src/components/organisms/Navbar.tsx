@@ -1,11 +1,11 @@
 import DateNTime from '../atoms/DateNTime';
 import Battery from '../molecules/Battery';
 import Apple from '../../assets/icons/apple.svg';
-import Wifi from '../../assets/icons/wifi.svg';
 import Image from 'next/image';
 import { useStore } from '@/lib/store';
 import ControlCenter from '../molecules/ControlCenter';
 import HiddenNavbar from '../atoms/HiddenNavbar';
+import Wifi from '../atoms/Wifi';
 
 export default function Navbar() {
   const { logedIn } = useStore();
@@ -35,14 +35,7 @@ export default function Navbar() {
         <div className="flex items-center">
           {logedIn && <HiddenNavbar />}
           <Battery />
-          <div className="px-2.5">
-            <Image
-              src={Wifi}
-              height={13}
-              alt="wifi logo"
-              className="drop-shadow"
-            />
-          </div>
+          <Wifi />
           <ControlCenter />
           <DateNTime />
         </div>
