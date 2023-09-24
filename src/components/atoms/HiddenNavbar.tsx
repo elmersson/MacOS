@@ -5,11 +5,11 @@ import {
   IoRocketSharp,
 } from 'react-icons/io5';
 import { SiAdobecreativecloud, SiAlfred, SiStackshare } from 'react-icons/si';
-import { AiFillMacCommand } from 'react-icons/ai';
 import { RxDividerVertical } from 'react-icons/rx';
 import { TbRectangleFilled, TbSquareDotFilled } from 'react-icons/tb';
 import { RiCactusFill } from 'react-icons/ri';
 import { PiMonitorFill } from 'react-icons/pi';
+import { LuCommand } from 'react-icons/lu';
 
 export default function HiddenNavbar() {
   const [isHidden, setIsHidden] = useState(false);
@@ -52,7 +52,7 @@ export default function HiddenNavbar() {
           <SiStackshare style={{ color: 'white', fontSize: '1.2rem' }} />
           <IoRocketSharp style={{ color: 'white', fontSize: '1.2rem' }} />
           <PiMonitorFill style={{ color: 'white', fontSize: '1.2rem' }} />
-          <AiFillMacCommand style={{ color: 'white', fontSize: '1.2rem' }} />
+          <LuCommand style={{ color: 'white', fontSize: '1rem' }} />
           <RiCactusFill style={{ color: 'white', fontSize: '1.2rem' }} />
           <SiAlfred style={{ color: 'white', fontSize: '1.2rem' }} />
           <TbRectangleFilled style={{ color: 'white', fontSize: '1.2rem' }} />
