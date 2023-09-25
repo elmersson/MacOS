@@ -21,10 +21,10 @@
 - [ ] Apps
 - [ ] Menus
   - [x] Widgetmenu
-  - [ ] Control center
+  - [x] Control center
   - [ ] Wifi
   - [x] Battery
-  - [ ] Hide menu
+  - [x] Hide menu
 
 ## Tech-stack
 
