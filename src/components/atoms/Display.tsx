@@ -25,16 +25,6 @@ export default function Display() {
             />
             <style>
               {`
-                  input.display-slider::-webkit-slider-thumb {
-                    -webkit-appearance: none;
-                    appearance: none;
-                    width: 20px;
-                    height: 20px;
-                    border-radius: 50%;
-                    background: white;
-                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
-                  }
-  
                   input.display-slider::-webkit-slider-runnable-track {
                     background: linear-gradient(to right, white 0%, white ${display}%, transparent ${display}%, transparent 100%);
                   }
