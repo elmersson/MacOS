@@ -48,7 +48,14 @@ export default function Apple() {
         }`}
         onClick={handleVisibility}
       >
-        <IoLogoApple style={{ color: 'white', fontSize: '18px' }} />
+        <div className=" drop-shadow-lg">
+          <IoLogoApple
+            style={{
+              color: 'white',
+              fontSize: '18px',
+            }}
+          />
+        </div>
       </div>
       <AnimatePresence>
         {isVisible && (

@@ -23,7 +23,7 @@ export default function Battery() {
       <p className="text-white text-xs text-shadow">
         {(batteryState.level * 100).toFixed(0)} %
       </p>
-      <div className="relative flex items-center">
+      <div className="relative flex items-center drop-shadow-lg">
         <BatteryLevelIndicator batteryLevel={batteryState.level} />
         {batteryState.charging && (
           <Image
@@ -31,7 +31,7 @@ export default function Battery() {
             alt="charging"
             height={9.8}
             width={9.8}
-            className="absolute top-1/2 -mt-2 left-2.5 ml-1"
+            className="absolute top-1/2 -mt-2 left-2.5 ml-1 drop-shadow-lg"
           />
         )}
       </div>

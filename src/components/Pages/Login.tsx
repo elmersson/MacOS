@@ -49,10 +49,10 @@ export default function Login() {
       <Navbar />
       <div className="flex flex-col h-screen justify-between">
         <div className="flex flex-col items-center mt-10">
-          <text className="text-2xl font-bold text-white">
+          <text className="text-[1.7rem] font-bold text-teal-100 mix-blend-overlay text-shadow">
             {timeObject.dayOfWeek}, {timeObject.dayOfMonth} {timeObject.month}
           </text>
-          <text className="text-[6.5rem] font-black text-white">
+          <text className="text-[6.5rem] font-black text-teal-100 mix-blend-overlay -mt-8 text-shadow">
             {timeObject.time}
           </text>
         </div>
