@@ -46,7 +46,9 @@ export default function Wifi() {
         }`}
         onClick={handleClick}
       >
-        <MdWifi style={{ color: 'white', fontSize: '20px' }} />
+        <div className="drop-shadow-lg">
+          <MdWifi style={{ color: 'white', fontSize: '20px' }} />
+        </div>
       </div>
       <AnimatePresence>
         {isVisible && (

@@ -5,6 +5,7 @@ import ControlCenter from '../molecules/ControlCenter';
 import HiddenNavbar from '../atoms/HiddenNavbar';
 import Wifi from '../atoms/Wifi';
 import Apple from '../molecules/Apple';
+import AppMenu from '../molecules/AppMenu';
 
 export default function Navbar() {
   const { logedIn } = useStore();
@@ -21,7 +22,14 @@ export default function Navbar() {
             : ''
         } py-2 px-2 relative`}
       >
-        <div className="flex items-center">{logedIn && <Apple />}</div>
+        <div className="flex flex-row items-center">
+          {logedIn && (
+            <>
+              <Apple />
+              <AppMenu />
+            </>
+          )}
+        </div>
         <div className="flex items-center">
           {logedIn && <HiddenNavbar />}
           <Battery />
