@@ -5,7 +5,7 @@
   @layer base {
     .menubg {
       background-clip: padding-box;
-      backdrop-filter: blur(1.5rem);
+      backdrop-filter: blur(5rem);
       background-color: rgb(226 232 240 / 0.8);
       border-radius: 0.4rem;
       padding: 0.2rem

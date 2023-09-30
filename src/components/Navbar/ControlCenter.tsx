@@ -2,13 +2,14 @@ import Image from 'next/image';
 import ControlCenterImage from '../../assets/icons/controlCenter.svg';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import Display from '../atoms/Display';
-import Music from '../atoms/Music';
-import Sound from '../atoms/Sound';
-import ThemeSwitcher from '../atoms/ThemeSwitcher';
+
 import ConnectControl from './ConnectControl';
 import StageNScreen from './StageNScreen';
 import { useAudio } from '@/hooks/useAudio';
+import Display from './Display';
+import Music from './Music';
+import Sound from './Sound';
+import ThemeSwitcher from './ThemeSwitcher';
 
 export default function ControlCenter() {
   const [isVisible, setIsisVisible] = useState<boolean>(false);

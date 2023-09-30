@@ -2,7 +2,7 @@
 import Boot from '@/components/Pages/Boot';
 import Desktop from '@/components/Pages/Desktop';
 import Login from '@/components/Pages/Login';
-import Wallpapers from '@/components/atoms/Wallpapers';
+import Wallpapers from '@/components/General/Wallpapers';
 import { useStore } from '@/lib/store';
 
 export default function Home() {
