@@ -64,9 +64,9 @@ export default function Apple() {
             animate="visible"
             exit="hidden"
             variants={variants}
-            className="fixed top-10 left-[4px] z-50 overflow-hidden shadow-lg"
+            className="fixed top-11 left-[4px] z-50 overflow-hidden shadow-lg menubg"
           >
-            <div className="w-72 flex flex-col menubg">
+            <div className="w-72 flex flex-col ">
               <div className="menuItem">
                 <p className="text-xs">About This Mac</p>
               </div>

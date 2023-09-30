@@ -1,6 +1,6 @@
 import useClock from '@/hooks/useClock';
 import { useState } from 'react';
-import WidgetsBar from '../molecules/WidgetsBar';
+import WidgetsBar from '../Navbar/WidgetsBar';
 const getFormattedDate = (now: Date): string => {
   const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const months = [

@@ -1,6 +1,6 @@
 import useClock from '@/hooks/useClock';
 import { useState, useEffect } from 'react';
-import AnalogClock from './AnalogClock';
+import AnalogClock from '../Navbar/AnalogClock';
 
 function calculateDayDifference(date: Date) {
   const currentDate = new Date();

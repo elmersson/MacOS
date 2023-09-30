@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import CalenderWidget from '../atoms/CalenderWidget';
-import WeatherWidget from '../atoms/WeatherWidget';
+import CalenderWidget from './CalenderWidget';
+import WeatherWidget from './WeatherWidget';
 import Clocks from './Clocks';
 import Stocks from './Stocks';
 

@@ -1,5 +1,5 @@
-import Dock from '../organisms/Dock';
-import Navbar from '../organisms/Navbar';
+import Dock from '../Dock/Dock';
+import Navbar from '../Navbar/Navbar';
 
 export default function Desktop() {
   const width =

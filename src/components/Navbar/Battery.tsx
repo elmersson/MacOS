@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { useBattery } from '../../hooks/useBattery';
 import Charging from '@/assets/icons/charging.svg';
-import BatteryLevelIndicator from '../atoms/BatteryLevelIndicator';
+import BatteryLevelIndicator from './BatteryLevelIndicator';
 import { useState } from 'react';
-import BatteryMenu from '../atoms/BatteryMenu';
+import BatteryMenu from './BatteryMenu';
 
 export default function Battery() {
   const batteryState = useBattery();

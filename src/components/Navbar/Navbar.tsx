@@ -1,11 +1,12 @@
-import DateNTime from '../atoms/DateNTime';
-import Battery from '../molecules/Battery';
+import Battery from './Battery';
 import { useStore } from '@/lib/store';
-import ControlCenter from '../molecules/ControlCenter';
-import HiddenNavbar from '../atoms/HiddenNavbar';
-import Wifi from '../atoms/Wifi';
-import Apple from '../molecules/Apple';
-import AppMenu from '../molecules/AppMenu';
+import ControlCenter from './ControlCenter';
+
+import Apple from './Apple';
+import AppMenu from './AppMenu';
+import DateNTime from './DateNTime';
+import HiddenNavbar from './HiddenNavbar';
+import Wifi from './Wifi';
 
 export default function Navbar() {
   const { logedIn } = useStore();
@@ -18,7 +19,7 @@ export default function Navbar() {
       <div
         className={`flex justify-between ${
           logedIn
-            ? 'bg-slate-800 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10 dark:bg-slate-800/40'
+            ? 'bg-slate-800 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-10 dark:bg-slate-800/40 '
             : ''
         } py-2 px-2 relative`}
       >

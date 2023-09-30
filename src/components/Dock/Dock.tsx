@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import apps from '@/data/Apps';
-import DockItem from '../molecules/DockItem';
+import DockItem from './DockItem';
 
 export default function Dock() {
   const [isDockFocused, setIsDockFocused] = useState(false);

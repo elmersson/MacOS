@@ -1,5 +1,5 @@
 import React from 'react';
-import Clock from '../atoms/Clock';
+import Clock from './Clock';
 
 export default function Clocks() {
   return (
