@@ -39,7 +39,7 @@ export default function DateNTime() {
     <>
       <div
         className={`px-2.5 py-1 rounded-md ${
-          isWidgetVisible ? 'bg-slate-100/20' : ''
+          isWidgetVisible ? 'bg-slate-100/40' : ''
         }`}
         onClick={handleClick}
       >
