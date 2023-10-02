@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import CalenderWidget from './CalenderWidget';
 import WeatherWidget from './WeatherWidget';
-import Clocks from './Clocks';
 import OutlookCalendar from './OutlookCalendar';
+import GoogleCalendar from './GoogleCalendar';
 
 interface WidgetBarProps {
   isVisible: boolean;
@@ -42,7 +42,7 @@ export default function WidgetsBar({ isVisible }: WidgetBarProps) {
                 <CalenderWidget />
                 <WeatherWidget />
               </div>
-              <Clocks />
+              <GoogleCalendar />
               <OutlookCalendar />
               <div className="flex justify-center">
                 <div className="h-[24px] w-[98px] bg-clip-padding backdrop-filter backdrop-blur-md bg-neutral-50/50 rounded-2xl shadow-2xl flex items-center justify-center">
