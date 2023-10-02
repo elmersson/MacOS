@@ -25,8 +25,7 @@ function OutlookItem({ time, title, location }: OutlookItemProps) {
       return `${difference} min`;
     } else {
       const hours = Math.floor(difference / 60);
-      const remainingMinutes = difference % 60;
-      return `${hours} hr ${remainingMinutes} min`;
+      return `${hours} hr`;
     }
   };
   return (
@@ -58,6 +57,9 @@ export default function OutlookCalendar() {
           </p>
         </div>
         <div>
+          <p className="text-xs">M</p>
+        </div>
+        <div>
           <p className="text-xs mb-2 text-slate-600">Today</p>
           <div className="flex flex-col">
             <OutlookItem
@@ -67,7 +69,7 @@ export default function OutlookCalendar() {
             />
             <div className="flex w-full my-1 h-0.5 bg-slate-400/20" />
             <OutlookItem
-              time="17:15"
+              time="18:00"
               title="FE-Sync"
               location="Microsoft Teams Meeting"
             />
