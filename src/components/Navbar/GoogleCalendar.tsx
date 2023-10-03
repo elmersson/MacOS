@@ -48,8 +48,7 @@ export default function GoogleCalendar() {
         setData(response.data);
         if (data && data.dagar && data.dagar.length > 0) {
           const namesForToday = data.dagar[0].namnsdag;
-          const reversedNamesForToday = [...namesForToday].reverse();
-          setNames(reversedNamesForToday);
+          setNames(namesForToday);
           setIsGet(true);
         }
       })
@@ -60,74 +59,172 @@ export default function GoogleCalendar() {
   }, [isGet]);
 
   return (
-    <div className="h-[164px] w-[344px] bg-white dark:bg-black rounded-2xl p-4 shadow-2xl">
+    <div className="h-[164px] w-[344px] bg-white dark:bg-black rounded-2xl p-3 shadow-2xl">
       <div className="flex flex-row">
         <div className="mr-12 space-y-1.5">
           <p className="text-xs text-slate-700">
             {forrmatedTime.month.toUpperCase()}
           </p>
-          <div className="flex flex-row space-x-3">
-            <p className="text-xxs">M</p>
-            <p className="text-xxs">T</p>
-            <p className="text-xxs">W</p>
-            <p className="text-xxs">T</p>
-            <p className="text-xxs">F</p>
-            <p className="text-xxs">S</p>
-            <p className="text-xxs">S</p>
+          <div className="flex flex-row w-[130px] justify-between">
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">M</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">T</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">W</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">T</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">F</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">S</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">S</p>
+            </span>
           </div>
-          <div className="flex flex-row space-x-2">
-            <p className="text-xxs text-slate-700/50">25</p>
-            <p className="text-xxs text-slate-700/50">26</p>
-            <p className="text-xxs text-slate-700/50">27</p>
-            <p className="text-xxs text-slate-700/50">28</p>
-            <p className="text-xxs text-slate-700/50">29</p>
-            <p className="text-xxs text-slate-700/50">30</p>
-            <p className="text-xxs ">1</p>
+          <div className="flex flex-row w-[130px] justify-between">
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">25</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">26</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">27</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">28</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">29</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">30</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">1</p>
+            </span>
           </div>
-          <div className="flex flex-row space-x-3.5">
-            <span className="text-xxs bg-blue-500 p-1 rounded-full">2</span>
-            <p className="text-xxs">3</p>
-            <p className="text-xxs">4</p>
-            <p className="text-xxs">5</p>
-            <p className="text-xxs">6</p>
-            <p className="text-xxs">7</p>
-            <p className="text-xxs">8</p>
+          <div className="flex flex-row w-[130px] justify-between">
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">2</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5 bg-blue-400 text-white rounded-full">
+              <p className="text-3xs">3</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">4</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">5</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">6</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">7</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">8</p>
+            </span>
           </div>
-          <div className="flex flex-row space-x-2.5">
-            <p className="text-xxs">9</p>
-            <p className="text-xxs">10</p>
-            <p className="text-xxs">11</p>
-            <p className="text-xxs">12</p>
-            <p className="text-xxs">13</p>
-            <p className="text-xxs">14</p>
-            <p className="text-xxs">15</p>
+          <div className="flex flex-row w-[130px] justify-between">
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">9</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">10</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">11</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">12</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">13</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">14</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">15</p>
+            </span>
           </div>
-          <div className="flex flex-row space-x-2">
-            <p className="text-xxs">16</p>
-            <p className="text-xxs">17</p>
-            <p className="text-xxs">18</p>
-            <p className="text-xxs">19</p>
-            <p className="text-xxs">20</p>
-            <p className="text-xxs">21</p>
-            <p className="text-xxs">22</p>
+          <div className="flex flex-row w-[130px] justify-between">
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">16</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">17</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">18</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">19</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">20</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">21</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">22</p>
+            </span>
           </div>
-          <div className="flex flex-row space-x-2">
-            <p className="text-xxs">23</p>
-            <p className="text-xxs">24</p>
-            <p className="text-xxs">25</p>
-            <p className="text-xxs">26</p>
-            <p className="text-xxs">27</p>
-            <p className="text-xxs">28</p>
-            <p className="text-xxs">29</p>
+          <div className="flex flex-row w-[130px] justify-between">
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">23</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">24</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">25</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">26</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">27</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">28</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">29</p>
+            </span>
           </div>
-          <div className="flex flex-row space-x-3">
-            <p className="text-xxs">30</p>
-            <p className="text-xxs">31</p>
-            <p className="text-xxs text-slate-700/50">1</p>
-            <p className="text-xxs text-slate-700/50">2</p>
-            <p className="text-xxs text-slate-700/50">3</p>
-            <p className="text-xxs text-slate-700/50">4</p>
-            <p className="text-xxs text-slate-700/50">S</p>
+          <div className="flex flex-row w-[130px] justify-between">
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">30</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">31</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">1</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">2</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">3</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">4</p>
+            </span>
+            <span className="w-4 h-4 flex justify-center items-center -my-0.5">
+              <p className="text-3xs">5</p>
+            </span>
           </div>
         </div>
         <div className="">
@@ -136,18 +233,16 @@ export default function GoogleCalendar() {
             {names.map((name, index) => (
               <div key={index} className="flex flex-row">
                 <p className="text-xs">{name}</p>
-                {index === name.length - 4 && (
-                  <span className="text-xs">,</span>
-                )}
+                {index !== names.length - 1 && <p className="text-xs">,</p>}
               </div>
             ))}
           </div>
           <div className="flex flex-col space-y-1">
-            <div className="px-2 pb-4 pt-1 rounded-xl bg-purple-400">
+            <div className="px-2 pb-[20px] pt-1 rounded-xl bg-purple-400">
               <p className="text-xs">(not set)</p>
               <p className="text-xs">15:15 - 16:15</p>
             </div>
-            <div className="px-2 pb-4 pt-1 rounded-xl bg-purple-400">
+            <div className="px-2 pb-[20px] pt-1 rounded-xl bg-purple-400">
               <p className="text-xs">(not set)</p>
               <p className="text-xs">15:15 - 16:15</p>
             </div>

@@ -16,6 +16,7 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
+        '3xs': ['0.5rem', '0.0rem'],
         'xxs': ['0.6rem', '0.7rem'],},
       textShadow: {
         sm: '0 1px 2px var(--tw-shadow-color)',
