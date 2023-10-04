@@ -57,9 +57,6 @@ export default function OutlookCalendar() {
           </p>
         </div>
         <div>
-          <p className="text-xs">M</p>
-        </div>
-        <div>
           <p className="text-xs mb-2 text-slate-600">Today</p>
           <div className="flex flex-col">
             <OutlookItem
