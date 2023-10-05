@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import CalenderWidget from './CalenderWidget';
 import WeatherWidget from './WeatherWidget';
 import OutlookCalendar from './OutlookCalendar';
 import GoogleCalendar from './GoogleCalendar';
@@ -39,7 +38,6 @@ export default function WidgetsBar({ isVisible }: WidgetBarProps) {
           <div className="p-4 flex justify-end z-50">
             <div className="flex flex-col space-y-4">
               <div className="flex flex-row space-x-4">
-                <CalenderWidget />
                 <WeatherWidget />
               </div>
               <GoogleCalendar />
