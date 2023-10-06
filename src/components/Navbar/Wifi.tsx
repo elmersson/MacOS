@@ -9,26 +9,13 @@ import {
 import { MdWifi } from 'react-icons/md';
 import { TbAntennaBars5 } from 'react-icons/tb';
 import { BsLink } from 'react-icons/bs';
+import { MenuVariants } from '@/configs/animations';
 
 export default function Wifi() {
   const [isVisible, setIsisVisible] = useState<boolean>(false);
   const [isPersonalHotspot, setIsPersonalHotspot] = useState<boolean>(false);
 
   const { wifi, setWifi } = useStore();
-  const variants = {
-    hidden: {
-      opacity: 0,
-      transition: {
-        duration: 0.3,
-      },
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.1,
-      },
-    },
-  };
 
   const handleClick = () => {
     setIsisVisible(!isVisible);
@@ -56,8 +43,8 @@ export default function Wifi() {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            variants={variants}
-            className="fixed top-10 right-[158px] z-50 overflow-hidden shadow-lg"
+            variants={MenuVariants}
+            className="fixed top-11 right-[135px] z-50 overflow-hidden shadow-lg"
           >
             <div className="w-72 flex flex-col menubg space-y-2 p-3">
               <div className="flex flex-row justify-between">
@@ -76,7 +63,7 @@ export default function Wifi() {
               </div>
 
               <div className="border-b border-gray-500/20"></div>
-              <p className="text-xs text-slate-700/80 font-bold">
+              <p className="text-sm text-slate-700/80 font-bold">
                 Personal Hotspot
               </p>
               <div className="flex flex-row justify-between">
@@ -91,7 +78,7 @@ export default function Wifi() {
                   >
                     <BsLink style={{ color: 'rgb(51 65 85 / 0.8)' }} />
                   </div>
-                  <p className="text-xs">Rasmus - iPhone</p>
+                  <p className="text-sm">Rasmus - iPhone</p>
                 </div>
                 <div className="flex flex-row items-center space-x-1">
                   <TbAntennaBars5 style={{ color: 'rgb(51 65 85 / 0.8)' }} />
@@ -102,7 +89,7 @@ export default function Wifi() {
                 </div>
               </div>
               <div className="border-b border-gray-500/20"></div>
-              <p className="text-xs text-slate-700/80 font-bold">
+              <p className="text-sm text-slate-700/80 font-bold">
                 Known Network
               </p>
               <div className="flex flex-row justify-between items-center">
@@ -117,7 +104,7 @@ export default function Wifi() {
                   >
                     <MdWifi style={{ color: 'white' }} />
                   </div>
-                  <p className="text-xs">NETGEAR15-5G</p>
+                  <p className="text-sm">NETGEAR15-5G</p>
                 </div>
                 <IoLockClosed
                   style={{ color: 'rgb(51 65 85 / 0.8)', fontSize: '14px' }}
@@ -134,7 +121,7 @@ export default function Wifi() {
               </div>
 
               <div className="border-b border-gray-500/20"></div>
-              <p className="text-xs">Wi-fi Settings...</p>
+              <p className="text-sm">Wi-fi Settings...</p>
             </div>
           </motion.div>
         )}

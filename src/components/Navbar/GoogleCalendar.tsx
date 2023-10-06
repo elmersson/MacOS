@@ -62,13 +62,13 @@ export default function GoogleCalendar() {
   return (
     <div className="h-[164px] w-[344px] bg-white dark:bg-black rounded-2xl p-3 shadow-2xl">
       <div className="flex flex-row">
-        <div className="mr-12 space-y-1.5">
+        <div className="mr-10 space-y-1.5">
           <p className="text-xs text-slate-700">
             {forrmatedTime.month.toUpperCase()}
           </p>
           <GoogleCalendarView />
         </div>
-        <div className="">
+        <div>
           <div className="flex flex-row bg-slate-200 p-1 rounded-full space-x-1 items-center mb-1 w-36">
             <div className="h-3 w-3 rounded-full bg-slate-600" />
             {names.map((name, index) => (
