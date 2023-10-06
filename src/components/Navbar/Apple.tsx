@@ -1,3 +1,4 @@
+import { MenuVariants } from '@/configs/animations';
 import { useStore } from '@/lib/store';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
@@ -12,21 +13,6 @@ import { LuCommand, LuOption, LuPower } from 'react-icons/lu';
 export default function Apple() {
   const [isVisible, setIsVisible] = useState<Boolean>(false);
   const { setBooted, setLogedIn } = useStore();
-
-  const variants = {
-    hidden: {
-      opacity: 0,
-      transition: {
-        duration: 0.3,
-      },
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.1,
-      },
-    },
-  };
 
   const handleVisibility = () => {
     setIsVisible(!isVisible);
@@ -63,21 +49,21 @@ export default function Apple() {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            variants={variants}
+            variants={MenuVariants}
             className="fixed top-11 left-[4px] z-50 overflow-hidden shadow-lg menubg"
           >
             <div className="w-72 flex flex-col ">
               <div className="menuItem">
-                <p className="text-xs">About This Mac</p>
+                <p className="text-sm">About This Mac</p>
               </div>
               <div className="border-b border-gray-500/20"></div>
               <div className="menuItem">
-                <p className="text-xs">System Settings...</p>
+                <p className="text-sm">System Settings...</p>
               </div>
 
               <div className="menuItem">
                 <div className="flex flex-row items-center">
-                  <p className="text-xs">App Store...</p>
+                  <p className="text-sm">App Store...</p>
                 </div>
                 <div className="flex flex-row items-center px-3 rounded-xl bg-slate-400/50">
                   <p className="text-xxs ">11 Updates</p>
@@ -86,13 +72,13 @@ export default function Apple() {
               <div className="border-b border-gray-500/20"></div>
               <div className="menuItem">
                 <div className="flex flex-row items-center space-x-2">
-                  <p className="text-xs">Recent Items</p>
+                  <p className="text-sm">Recent Items</p>
                 </div>
                 <IoChevronForwardOutline />
               </div>
               <div className="border-b border-gray-500/20" />
               <div className="menuItem" onClick={handleQuit}>
-                <p className="text-xs">Force Quit</p>
+                <p className="text-sm">Force Quit</p>
                 <div className="flex flex-row space-x-1">
                   <LuOption />
                   <LuCommand />
@@ -101,18 +87,18 @@ export default function Apple() {
               </div>
               <div className="border-b border-gray-500/20"></div>
               <div className="menuItem" onClick={handleSignOut}>
-                <p className="text-xs">Sleep</p>
+                <p className="text-sm">Sleep</p>
               </div>
               <div className="menuItem" onClick={handleQuit}>
-                <p className="text-xs">Restart...</p>
+                <p className="text-sm">Restart...</p>
               </div>
               <div className="menuItem" onClick={handleQuit}>
-                <p className="text-xs">Shut Down...</p>
+                <p className="text-sm">Shut Down...</p>
               </div>
 
               <div className="border-b border-gray-500/20"></div>
               <div className="menuItem" onClick={handleSignOut}>
-                <p className="text-xs">Lock Screen</p>
+                <p className="text-sm">Lock Screen</p>
                 <div className="flex flex-row space-x-1">
                   <IoChevronUpOutline />
                   <LuCommand />
@@ -120,7 +106,7 @@ export default function Apple() {
                 </div>
               </div>
               <div className="menuItem" onClick={handleSignOut}>
-                <p className="text-xs">Log Out Rasmus Elmersson...</p>
+                <p className="text-sm">Log Out Rasmus Elmersson...</p>
                 <div className="flex flex-row space-x-1 items-center">
                   <BsShift />
                   <LuCommand />

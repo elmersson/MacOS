@@ -82,7 +82,7 @@ export default function GoogleCalendarView() {
     }
 
     return rows.map((row, rowIndex) => (
-      <div key={rowIndex} className="flex flex-row w-[130px] justify-between">
+      <div key={rowIndex} className="flex flex-row w-[140px] justify-between">
         {row.map((date, columnIndex) => {
           const isFirstRowBeforeMonth =
             rowIndex === 0 && columnIndex < firstDayOfMonthIndex;
@@ -117,7 +117,7 @@ export default function GoogleCalendarView() {
 
   return (
     <>
-      <div className="flex flex-row w-[130px] justify-between">
+      <div className="flex flex-row w-[140px] justify-between">
         {renderDaysOfWeek()}
       </div>
       {renderCalendarDates()}

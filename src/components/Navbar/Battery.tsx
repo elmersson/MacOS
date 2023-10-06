@@ -3,7 +3,8 @@ import { useBattery } from '../../hooks/useBattery';
 import Charging from '@/assets/icons/charging.svg';
 import BatteryLevelIndicator from './BatteryLevelIndicator';
 import { useState } from 'react';
-import BatteryMenu from './BatteryMenu';
+import { MenuVariants } from '@/configs/animations';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Battery() {
   const batteryState = useBattery();
@@ -35,10 +36,30 @@ export default function Battery() {
           />
         )}
       </div>
-      <BatteryMenu
-        isVisible={isBatteryVisible}
-        charging={batteryState.charging}
-      />
+      <AnimatePresence>
+        {isBatteryVisible && (
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={MenuVariants}
+            className="fixed top-11 right-[175px] z-50 overflow-hidden shadow-lg"
+          >
+            <div className=" rounded-md px-3 py-3 w-80 flex flex-col bg-clip-padding backdrop-filter backdrop-blur-3xl bg-slate-200/80 space-y-2">
+              <p className="text-sm font-bold">
+                {batteryState.charging ? 'Power adapter' : 'Battery'}
+              </p>
+              <p className="text-xs text-slate-500">Power source: Battery</p>
+              <div className="border-b border-gray-500/20"></div>
+              <p className="text-xs text-slate-600 font-bold">
+                Using Significant Energy
+              </p>
+              <div className="border-b border-gray-500/20"></div>
+              <p className="text-xs font-bold">Battery Settings...</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
