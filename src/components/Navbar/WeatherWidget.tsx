@@ -59,14 +59,14 @@ export default function WeatherWidget() {
     }
   }, [latitude, longitude]);
 
-  if (!weather) {
+  if (!weather || !weather.list) {
     return null;
   }
 
   const weatherSlice = weather.list.slice(0, 6);
 
   return (
-    <div className="h-[164px] w-[344px] rounded-2xl pt-4 px-4 pb-2 shadow-2xl bg-gradient-to-b from-[#225385] to-[#92caf4]">
+    <div className="h-[164px] w-[344px] rounded-2xl pt-4 px-4 pb-2 shadow-2xl bg-weather-dark">
       <div className="flex flex-col">
         <div className="flex flex-row justify-between">
           <div>
