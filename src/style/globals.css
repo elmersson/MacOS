@@ -58,32 +58,6 @@
       background: white;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
     }
-    
-    .clock {
-      width: 100%;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      .analog-clock {
-        width: 50px;
-        height: 50px;
-        border-radius: 25px;
-        position: relative;
-        .dial {
-          position: absolute;
-          left: 50%;
-          width: 25px; 
-          height: 25px;
-          transform-origin: bottom left;
-          &.hours {
-            width: 17.5px;
-            height: 17.5px; 
-            top: 7.5px; 
-          }
-        }
-      }
-    }
 
     .shake {
       animation: shake 0.4s;
