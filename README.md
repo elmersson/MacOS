@@ -19,10 +19,10 @@
 ### :technologist: Frontend:
 
 - [ ] Apps
-- [ ] Menus
+- [x] Menus
   - [x] Widgetmenu
   - [x] Control center
-  - [ ] Wifi
+  - [x] Wifi
   - [x] Battery
   - [x] Hide menu
 
