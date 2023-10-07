@@ -15,6 +15,11 @@ module.exports = {
   darkMode: ['class'],
   theme: {
     extend: {
+      colors: {
+        'apple-blue': {
+          100: '#167AE5'
+        },
+      },
       fontSize: {
         '3xs': ['0.5rem', '0.0rem'],
         'xxs': ['0.6rem', '0.7rem'],
@@ -25,6 +30,10 @@ module.exports = {
         sm: '0 1px 2px var(--tw-shadow-color)',
         DEFAULT: '0 2px 4px rgba(0,0,0,0.22)',
         lg: '0 0px 8px rgba(0,0,0,0.55)',
+      },
+      backgroundImage: {
+        'apple-active': 'linear-gradient(180deg, #167AE5, #156DCC)',
+        'weather-dark': 'linear-gradient(180deg, #225385, #92caf4)',
       },
     },
   },
