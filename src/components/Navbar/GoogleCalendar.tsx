@@ -27,7 +27,6 @@ interface Days {
 export default function GoogleCalendar() {
   const [data, setData] = useState<NamesDayData>();
   const [names, setNames] = useState<string[]>([]);
-  const [isGet, setIsGet] = useState<boolean>(false);
 
   const currentTime = useClock();
   const forrmatedTime = getFullFormatDate(currentTime);
@@ -41,8 +40,6 @@ export default function GoogleCalendar() {
       forrmatedTime.dayOfMonth;
     const apiUrl = `http://sholiday.faboul.se/dagar/v2.1/${currentDate}`;
 
-    console.log(apiUrl);
-
     axios
       .get(apiUrl)
       .then((response) => {
@@ -50,14 +47,13 @@ export default function GoogleCalendar() {
         if (data && data.dagar && data.dagar.length > 0) {
           const namesForToday = data.dagar[0].namnsdag;
           setNames(namesForToday);
-          setIsGet(true);
         }
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isGet]);
+  }, [forrmatedTime.time]);
 
   return (
     <div className="h-[164px] w-[344px] bg-white dark:bg-black rounded-2xl p-3 shadow-2xl">
