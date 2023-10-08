@@ -13,18 +13,11 @@
 ### :art: Figma:
 
 - [ ] How apps looks
-- [ ] Boot
-- [ ] Menus
 
 ### :technologist: Frontend:
 
 - [ ] Apps
-- [x] Menus
-  - [x] Widgetmenu
-  - [x] Control center
-  - [x] Wifi
-  - [x] Battery
-  - [x] Hide menu
+- [ ] Playwright
 
 ## Tech-stack
 
