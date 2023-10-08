@@ -33,7 +33,7 @@ export default function WeatherWidget() {
       try {
         const apiKey = process.env.NEXT_PUBLIC_OPEN_WEATHER;
         const response = await axios.get(
-          `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`
+          `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`
         );
         const weatherData: WeatherData = response.data;
         setWeather(weatherData);
@@ -72,12 +72,12 @@ export default function WeatherWidget() {
           <div>
             <div className="flex flex-row text-white items-center space-x-1 text-shadow-lg">
               <p className="font-semibold text-base text-white">
-                {weather.city.name}
+                {weather.city.name || 'Stockholm'}
               </p>
               <FaLocationArrow size="0.6em" />
             </div>
             <p className="text-4xl text-white mb-2 text-shadow-lg">
-              {weather.list[0].main.temp}°
+              {weather.list[0].main.temp.toFixed(0)}°
             </p>
           </div>
           <div className="flex flex-col">
