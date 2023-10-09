@@ -55,7 +55,7 @@ export default function Sound({ setAudioVolume }: SoundProps) {
           <div
             className={`h-6 w-7 ${
               airdrop
-                ? 'bg-[#167AE5]'
+                ? 'bg-apple-blue-100'
                 : 'bg-clip-padding backdrop-filter backdrop-blur-3xl bg-slate-200/30'
             } rounded-full flex justify-center items-center`}
             onClick={handleAirdropClick}

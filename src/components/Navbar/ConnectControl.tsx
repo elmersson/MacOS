@@ -28,7 +28,7 @@ export default function ConnectControl() {
         <div
           className={`h-7 w-7 ${
             wifi
-              ? 'bg-[#167AE5]'
+              ? 'bg-apple-blue-100'
               : 'bg-clip-padding backdrop-filter backdrop-blur-3xl bg-slate-200/30'
           } rounded-full flex justify-center items-center`}
         >
@@ -43,7 +43,7 @@ export default function ConnectControl() {
         <div
           className={`h-7 w-7 ${
             bluetooth
-              ? 'bg-[#167AE5]'
+              ? 'bg-apple-blue-100'
               : 'bg-clip-padding backdrop-filter backdrop-blur-3xl bg-slate-200/30'
           } rounded-full flex justify-center items-center`}
         >
@@ -58,7 +58,7 @@ export default function ConnectControl() {
         <div
           className={`h-7 w-7 ${
             airdrop
-              ? 'bg-[#167AE5]'
+              ? 'bg-apple-blue-100'
               : 'bg-clip-padding backdrop-filter backdrop-blur-3xl bg-slate-200/30'
           } rounded-full flex justify-center items-center`}
         >
