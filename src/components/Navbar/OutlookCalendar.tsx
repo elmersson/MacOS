@@ -50,7 +50,7 @@ export default function OutlookCalendar() {
     <div className="h-[164px] w-[344px] bg-white dark:bg-black rounded-2xl p-4 shadow-2xl">
       <div className="flex flex-row">
         <div className="mr-8">
-          <p className="text-xs text-[#167AE5]">{currentTime.dayOfWeek}</p>
+          <p className="text-xs text-apple-blue-100">{currentTime.dayOfWeek}</p>
           <p className="text-4xl">
             {currentTime.dayOfMonth < 10 ? '0' : ''}
             {currentTime.dayOfMonth}
