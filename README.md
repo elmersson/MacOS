@@ -18,6 +18,9 @@
 
 - [ ] Apps
 - [ ] Playwright
+  - [ ] Boot
+  - [ ] SignIn
+  - [ ] LogedIn
 - [ ] Window
 
 ## Tech-stack
