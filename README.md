@@ -18,6 +18,7 @@
 
 - [ ] Apps
 - [ ] Playwright
+- [ ] Window
 
 ## Tech-stack
 
