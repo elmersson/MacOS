@@ -1,0 +1,45 @@
+{{#each releases}}
+  ### [{{title}}]({{href}})
+
+  ### What's new:
+
+  {{#commit-list commits heading='#### Breaking Changes' message='[bB]reaking [cC]hange:|[bB]reaking:'}}
+    - {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list commits heading='#### New Features' message='^[fF]eat:|[fF]eat\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+    - {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list commits heading='#### Bug Fixes' message='^[fF]ix:|^[fF]ix\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+    - {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list commits heading='#### Documentation Updates' message='^[dD]ocs:|^[dD]ocs\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+    - {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list commits heading='#### Refactor Changes' message='^[rR]efactor:|^[rR]efactor\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+    - {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list commits heading='#### Performance Imrpovements' message='^[pP]erf:|^[pP]erf\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+    - {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list commits heading='#### Added Test Cases' message='^[tT]est:|^[tT]est\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+    - {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list commits heading='#### CI Changes' message='^[cC]i:|^[cC]i\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+    - {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list commits heading='#### Chores' message='^[cC]hore:|^[cC]hore\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+    - {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list commits heading='**General Changes**' exclude='[bB]reaking [cC]hange:|[bB]reaking:|^[fF]eat:|^[fF]eat\(|^[fF]ix:|^[fF]ix\(|^[cC]hore:|^[cC]hore\(|^[dD]ocs:|^[dD]ocs\(|^[rR]efactor:|^[rR]efactor\(|^[tT]est:|^[tT]est\(|^[cC]i:|^[cC]i\(|^[pP]erf:|^[pP]erf\('}}
+    - {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+{{/each}}
