@@ -1,27 +1,39 @@
 name: Playwright Tests
-on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
+
+on: [pull_request]
+
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: '14.x'
+          node-version: "lts/*"
       - name: Install dependencies
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
         run: npx playwright test
-      - uses: actions/upload-artifact@v2
+      - name: Upload test results
         if: always()
+        uses: actions/upload-artifact@v3
         with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
+          name: results
+          path: ./results.xml
+      - name: Comment test results
+        run: |
+          comment_payload='{
+            "body": "```xml\n'"$(cat results.xml)"'\n```"
+          }'    
+  
+          curl -X POST -H "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -d "$comment_payload" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/issues/$GITHUB_ISSUE_NUMBER/comments"
+        env:
+            GITHUB_ISSUE_NUMBER: ${{ github.event.pull_request.number }}
+            GITHUB_REPOSITORY: ${{ github.repository }}
+        shell: bash
