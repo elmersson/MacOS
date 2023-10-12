@@ -23,7 +23,7 @@ jobs:
         with:
           name: results
           path: ./results.xml
-      - name: Extract test results
+      - name: Comment test results
         run: |
             # Extract test results from the results.xml file
             test_results="$(cat results.xml)"
