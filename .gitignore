@@ -41,6 +41,5 @@ next-env.d.ts
 
 # CI
 results.xml
-test-results/
 
 

@@ -23,3 +23,23 @@ jobs:
         with:
           name: results
           path: ./results.xml
+      - name: Extract test results
+        run: |
+            # Extract test results from the results.xml file
+            test_results="$(cat results.xml)"
+  
+            # Generate a JSON payload for the GitHub API comment
+            comment_payload="{
+              \"body\": \"\`\`\`xml\n${test_results}\n\`\`\`\"
+            }"
+  
+            # Post a comment on the pull request with the test results
+            curl -X POST -H "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" \
+              -H "Accept: application/vnd.github.v3+json" \
+              -d "$comment_payload" \
+              "https://api.github.com/repos/$GITHUB_REPOSITORY/issues/$GITHUB_ISSUE_NUMBER/comments"
+  
+          env:
+            GITHUB_ISSUE_NUMBER: ${{ github.event.pull_request.number }}
+            GITHUB_REPOSITORY: ${{ github.repository }}
+          shell: bash
