@@ -1,0 +1,20 @@
+<testsuites id="" name="" tests="6" failures="0" skipped="0" errors="0" time="6.203361000000001">
+<testsuite name="example.spec.ts" timestamp="2023-10-12T16:21:39.964Z" hostname="chromium" tests="2" failures="0" skipped="0" time="0.916" errors="0">
+<testcase name="has title" classname="example.spec.ts" time="0.359">
+</testcase>
+<testcase name="get started link" classname="example.spec.ts" time="0.557">
+</testcase>
+</testsuite>
+<testsuite name="example.spec.ts" timestamp="2023-10-12T16:21:39.964Z" hostname="firefox" tests="2" failures="0" skipped="0" time="1.331" errors="0">
+<testcase name="has title" classname="example.spec.ts" time="0.608">
+</testcase>
+<testcase name="get started link" classname="example.spec.ts" time="0.723">
+</testcase>
+</testsuite>
+<testsuite name="example.spec.ts" timestamp="2023-10-12T16:21:39.964Z" hostname="webkit" tests="2" failures="0" skipped="0" time="2.236" errors="0">
+<testcase name="has title" classname="example.spec.ts" time="1.081">
+</testcase>
+<testcase name="get started link" classname="example.spec.ts" time="1.155">
+</testcase>
+</testsuite>
+</testsuites>
