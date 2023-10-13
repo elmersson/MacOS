@@ -25,10 +25,9 @@ jobs:
           path: ./results.json
       - name: Format and Comment JSON
         run: |
-          suites="$(jq '[.suites[] | {title, ok, annotations, results}]' results.json)"
-          errors="$(jq '.errors' results.json)"
-          stats="$(jq '{stats}' results.json)"
-          comment_payload=$(jq -n --argjson suites "$suites" --argjson errors "$errors" --argjson stats "$stats" '{body: "Playwright Test Results:\n```json\n{\"suites\": \( $suites), \"errors\": \( $errors), \"stats\": \( $stats)}\n```"}')
+          comment_payload=$(jq -n \
+          --argjson suites "$(jq '[.suites[] | {title, specs: [.specs[] | {title, ok, tests: [.tests[] | {projectName, results, status, duration, errors}]}] }]' results.json)" \
+          '{body: "Playwright Test Results:\n```json\n'"$suites"'\n```"}')
 
           echo "Comment payload: $comment_payload"
 
