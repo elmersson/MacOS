@@ -25,9 +25,13 @@ jobs:
           path: ./results.json
       - name: Format and Comment JSON
         run: |
-          comment_payload='{
-            "body": "Playwright Test Results:\n```json\n'"$(jq '{suites: [.suites[] | {title, ok, annotations, results}], errors, stats}' results.json)"'\n```"
-          }'
+          comment_payload=$(jq -n \
+          --argjson suites "$(jq '[.suites[] | {title, ok, annotations, results}]' results.json)" \
+          --argjson errors "$(jq '.errors' results.json)" \
+          --argjson stats "$(jq '{stats}' results.json)" \
+          '{suites: $suites, errors: $errors, stats: $stats}')
+
+          echo "Comment payload: $comment_payload"
 
           curl -X POST -H "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" \
             -H "Accept: application/vnd.github.v3+json" \
