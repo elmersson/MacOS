@@ -40,6 +40,9 @@ next-env.d.ts
 /playwright/.cache/
 
 # CI
+results.json
 results.xml
+
+
 
 
