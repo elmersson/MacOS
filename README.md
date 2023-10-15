@@ -18,7 +18,7 @@
 
 - [ ] Apps
 - [ ] Playwright
-  - [x] Render
+  - [x] Has title
   - [ ] Boot
   - [ ] SignIn
   - [ ] LogedIn
