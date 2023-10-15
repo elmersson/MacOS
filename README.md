@@ -18,6 +18,7 @@
 
 - [ ] Apps
 - [ ] Playwright
+  - [x] Render
   - [ ] Boot
   - [ ] SignIn
   - [ ] LogedIn
