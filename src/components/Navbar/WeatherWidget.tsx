@@ -1,9 +1,6 @@
-import axios from 'axios';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
 import { FaLocationArrow } from 'react-icons/fa';
-import Weather from '@/data/Weather/Weather.json';
-import { WeatherData } from '@/data/Weather/WeatherData';
+import { useStore } from '@/lib/store';
 
 const capitalizeWords = (str: string) => {
   return str
@@ -24,40 +21,7 @@ function extractHour(dtTxt: string): number {
 }
 
 export default function WeatherWidget() {
-  const [weather, setWeather] = useState<WeatherData>(Weather);
-  const [longitude, setLongitude] = useState<number>(59.3326);
-  const [latitude, setLatitude] = useState<number>(18.0649);
-
-  useEffect(() => {
-    const fetchWeatherData = async () => {
-      try {
-        const apiKey = process.env.NEXT_PUBLIC_OPEN_WEATHER;
-        const response = await axios.get(
-          `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`
-        );
-        const weatherData: WeatherData = response.data;
-        setWeather(weatherData);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          setLatitude(latitude);
-          setLongitude(longitude);
-          fetchWeatherData();
-        },
-        (error) => {
-          console.error(error);
-        }
-      );
-    } else {
-      fetchWeatherData();
-    }
-  }, [latitude, longitude]);
+  const { weather } = useStore();
 
   if (!weather || !weather.list) {
     return null;

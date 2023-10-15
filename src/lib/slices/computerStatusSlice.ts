@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { StateCreator } from "zustand";
+import { WeatherData } from '@/data/Weather/WeatherData';
+import Weather from '@/data/Weather/Weather.json';
 
 export interface ComputerStatus {
     booted: boolean
@@ -20,6 +22,10 @@ export interface ComputerStatus {
     setDisplay: (display: number) => void
     isPlaying: boolean
     setIsPlaying: (isPlaying: boolean) => void
+    weather: WeatherData
+    setWeather: (weather: WeatherData) => void
+    nameOfTheDay: string[]
+    setNameOfTheDay: (nameOfTheDay: string[]) => void
 }
 
 export const computerStatusSlice: StateCreator<ComputerStatus> = (set) => ({
@@ -40,5 +46,9 @@ export const computerStatusSlice: StateCreator<ComputerStatus> = (set) => ({
     display: 100,
     setDisplay: (display: number) => set({ display}),
     isPlaying: false,
-    setIsPlaying: (isPlaying: boolean) => set({ isPlaying })
+    setIsPlaying: (isPlaying: boolean) => set({ isPlaying }),
+    weather: Weather,
+    setWeather: (weather: WeatherData) => set({weather}),
+    nameOfTheDay: [],
+    setNameOfTheDay: (nameOfTheDay: string[]) => set({nameOfTheDay}),
 })
