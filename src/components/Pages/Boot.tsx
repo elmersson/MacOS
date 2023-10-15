@@ -11,8 +11,8 @@ import { WeatherData } from '@/data/Weather/WeatherData';
 
 export default function Boot() {
   const [progress, setProgress] = useState<number>(0);
-  const [longitude, setLongitude] = useState<number>(59.3326);
-  const [latitude, setLatitude] = useState<number>(18.0649);
+  const [latitude, setLatitude] = useState<number>(59.3326);
+  const [longitude, setLongitude] = useState<number>(18.0649);
   const { setBooted, setNameOfTheDay, setWeather } = useStore();
 
   useEffect(() => {
