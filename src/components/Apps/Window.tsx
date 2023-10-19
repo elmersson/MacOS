@@ -15,14 +15,14 @@ export default function Window() {
   const { scrHeight, scrWidth } = useScreenSize();
   const [hovered, setHovered] = useState(false);
 
-  const initWidth = Math.min(scrWidth || 640);
-  const initHeight = Math.min(scrHeight || 400);
+  const initWidth = Math.min(scrWidth, 640);
+  const initHeight = Math.min(scrHeight, 400);
 
   const [state, setState] = useState<WindowState>({
     width: initWidth,
-    height: initHeight,
-    x: scrWidth + (scrWidth - initWidth) / 2,
-    y: (scrHeight - initHeight - 11) * 2,
+    height: initHeight * 2,
+    x: scrWidth / 4,
+    y: scrHeight / 4,
   });
 
   useEffect(() => {
@@ -37,9 +37,17 @@ export default function Window() {
     setState({ width: scrWidth, height: scrHeight * 2, x: 0, y: 11 });
   };
 
+  const fullSize = () => {
+    setState({
+      width: scrWidth - 6,
+      height: scrHeight - 80,
+      x: 0,
+      y: 44,
+    });
+  };
+
   return (
     <Rnd
-      bounds="parent"
       size={{ width: state.width, height: state.height }}
       position={{
         x: Math.max(0, Math.min(scrWidth * 2 - state.width, state.x)),
@@ -82,7 +90,10 @@ export default function Window() {
               />
             )}
           </div>
-          <div className="rounded-full h-3 w-3 bg-[#2ACB42] border-[#1BAC2C] flex justify-center items-center">
+          <div
+            className="rounded-full h-3 w-3 bg-[#2ACB42] border-[#1BAC2C] flex justify-center items-center"
+            onClick={fullSize}
+          >
             {hovered && (
               <RiExpandLeftRightFill
                 style={{
@@ -95,7 +106,7 @@ export default function Window() {
           </div>
         </div>
       </div>
-      <div className="w-full h-[500px] bg-black">
+      <div className="w-full h-full bg-black">
         <iframe
           className="w-full h-full bg-black"
           title="github"
