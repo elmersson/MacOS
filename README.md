@@ -25,7 +25,7 @@
 
 - [ ] Apps
   - [ ] Finder
-  - [ ] VSCode
+  - [x] VSCode
   - [ ] Teams
   - [ ] Outlook
   - [ ] Arc
