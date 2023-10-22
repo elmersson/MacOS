@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Navbar from '../Navbar/Navbar';
 import { useStore } from '@/lib/store';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import AccountImage from '@/assets/images/Rasmus bakgrund.jpg';
 import useClock from '@/hooks/useClock';
@@ -12,6 +12,7 @@ export default function Login() {
   const [inputValue, setInputValue] = useState('');
   const [isPasswordCorrect, setIsPasswordCorrect] = useState(true);
   const [showInput, setShowInput] = useState(false);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   const currentTime = useClock();
   const timeObject = getFullFormatDate(currentTime);
@@ -41,11 +42,18 @@ export default function Login() {
     }
   };
 
+  useEffect(() => {
+    if (showInput && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [showInput]);
+
+  const handleClickOnScreen = () => {
+    setShowInput(true);
+  };
+
   return (
-    <div
-      className="min-h-screen flex flex-col"
-      onClick={() => setShowInput(true)}
-    >
+    <div className="min-h-screen flex flex-col" onClick={handleClickOnScreen}>
       <Navbar />
       <div className="flex flex-col h-screen justify-between">
         <div className="flex flex-col items-center mt-10">
@@ -79,6 +87,7 @@ export default function Login() {
               animate={inputAnimationControls}
             >
               <input
+                ref={inputRef}
                 placeholder="Enter Password"
                 onBlur={handlePasswordValidation}
                 onChange={handleInputChange}
