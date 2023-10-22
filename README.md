@@ -7,16 +7,25 @@
 ### :male_detective: Project:
 
 - [ ] Decide test-flow
+  - [ ] Boot
+  - [ ] LogIn
+  - [ ] Desktop  
 
 ### :art: Figma:
 
-- [ ] How apps looks
+- [ ] Apps
+  - [ ] Finder
+  - [ ] VSCode
+  - [ ] Teams
+  - [ ] Outlook
+  - [ ] Arc
+  - [ ] Linear
 
 ### :technologist: Frontend:
 
 - [ ] Apps
   - [ ] Finder
-  - [ ] VSCode
+  - [x] VSCode
   - [ ] Teams
   - [ ] Outlook
   - [ ] Arc
