@@ -2,9 +2,9 @@
 import Image from 'next/image';
 import Navbar from '../Navbar/Navbar';
 import { useStore } from '@/lib/store';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import AccountImage from '@/assets/images/Rasmus bakgrund.jpg';
+import ProfileImage from '@/assets/images/ProfileImage.png';
 import useClock from '@/hooks/useClock';
 import getFullFormatDate from '@/lib/Date/getFullFormatDate';
 
@@ -42,20 +42,18 @@ export default function Login() {
     }
   };
 
-  useEffect(() => {
-    if (showInput && inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [showInput]);
-
   const handleClickOnScreen = () => {
     setShowInput(true);
+
+    if (inputRef) {
+      inputRef.current?.focus();
+    }
   };
 
   return (
-    <div className="min-h-screen flex flex-col" onClick={handleClickOnScreen}>
+    <div className="h-screen flex flex-col" onClick={handleClickOnScreen}>
       <Navbar />
-      <div className="flex flex-col h-screen justify-between">
+      <div className="flex flex-col h-full justify-between">
         <div className="flex flex-col items-center mt-10">
           <text className="text-[2rem] font-bold text-teal-100 mix-blend-overlay text-shadow">
             {timeObject.dayOfWeek}, {timeObject.dayOfMonth} {timeObject.month}
@@ -67,7 +65,7 @@ export default function Login() {
         <div className="flex flex-col items-center mb-36">
           <div className="w-20 h-20 bg-slate-700 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 rounded-full p-2">
             <Image
-              src={AccountImage}
+              src={ProfileImage}
               alt="account image"
               className="rounded-full drop-shadow"
               layout="fill"
@@ -76,7 +74,7 @@ export default function Login() {
             />
           </div>
           {!showInput ? (
-            <p className="text-white font-semibold text-sm text-shadow-lg mt-2">
+            <p className="text-white font-semibold text-sm text-shadow-lg h-6 px-2 mt-2">
               Rasmus Elmersson
             </p>
           ) : (
