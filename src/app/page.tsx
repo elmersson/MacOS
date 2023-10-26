@@ -11,17 +11,10 @@ export default function Home() {
 
   if (!booted) {
     return <Boot />;
-  } else if (!logedIn) {
-    return (
-      <div style={{ opacity }}>
-        <Login />
-        <Wallpapers />
-      </div>
-    );
   } else {
     return (
       <div style={{ opacity }}>
-        <Desktop />
+        {logedIn ? <Desktop /> : <Login />}
         <Wallpapers />
       </div>
     );

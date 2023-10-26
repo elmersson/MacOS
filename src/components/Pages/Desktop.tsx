@@ -6,7 +6,7 @@ export default function Desktop() {
   return (
     <div className="flex flex-col overflow-hidden">
       <Navbar />
-      <Window />
+      {/* <Window /> */}
       <Dock />
     </div>
   );
