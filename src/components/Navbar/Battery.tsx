@@ -12,6 +12,7 @@ export default function Battery() {
 
   const handleClick = () => {
     setIsBatteryVisible(!isBatteryVisible);
+    console.log(isBatteryVisible);
   };
 
   return (

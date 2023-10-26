@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 import { useState, useEffect } from 'react';
 import { useStore } from '@/lib/store';
@@ -50,14 +49,13 @@ export default function Boot() {
           response.data.dagar.length > 0
         ) {
           const namesForToday = response.data.dagar[0].namnsdag;
-          console.log(namesForToday);
           setNameOfTheDay(namesForToday);
         }
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
-  }, []);
+  }, [apiUrl, setNameOfTheDay]);
 
   useEffect(() => {
     const fetchWeatherData = async () => {
@@ -90,7 +88,7 @@ export default function Boot() {
     } else {
       fetchWeatherData();
     }
-  }, []);
+  }, [latitude, longitude, setWeather]);
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center bg-black justify-center">
