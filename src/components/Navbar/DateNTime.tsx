@@ -43,7 +43,7 @@ export default function DateNTime() {
         }`}
         onClick={handleClick}
       >
-        <p className="text-xs text-slate-300 text-shadow">
+        <p className="text-sm text-slate-300 text-shadow">
           {getFormattedDate(currentTime)}
         </p>
       </div>

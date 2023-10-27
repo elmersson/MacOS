@@ -17,7 +17,7 @@ export default function Navbar() {
         logedIn
           ? 'bg-slate-800 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-10 dark:bg-slate-800/40 '
           : ''
-      } py-2 px-2 relative`}
+      } py-2 px-2 relative w-full h-full`}
     >
       <div className="flex flex-row items-center">
         {logedIn && (
