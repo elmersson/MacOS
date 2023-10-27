@@ -4,9 +4,9 @@ import Navbar from '../Navbar/Navbar';
 
 export default function Desktop() {
   return (
-    <div className="flex flex-col overflow-hidden">
+    <div className="flex">
       <Navbar />
-      {/* <Window /> */}
+      <Window />
       <Dock />
     </div>
   );

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import ControlCenterImage from '../../assets/icons/controlCenter.svg';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import ConnectControl from './ConnectControl';
@@ -10,9 +10,12 @@ import Display from './Display';
 import Music from './Music';
 import Sound from './Sound';
 import ThemeSwitcher from './ThemeSwitcher';
+import { useClickOutside } from '@/hooks/useClickOutside';
 
 export default function ControlCenter() {
   const [isVisible, setIsisVisible] = useState<boolean>(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const btnRef = useRef<HTMLDivElement>(null);
 
   // eslint-disable-next-line no-unused-vars
   const [audio, audioState, controls, audioRef] = useAudio({
@@ -38,12 +41,15 @@ export default function ControlCenter() {
     setIsisVisible(!isVisible);
   };
 
+  useClickOutside(ref, handleClick, [btnRef]);
+
   return (
     <div
       className={`flex items-center px-2.5 py-1 rounded-md ${
         isVisible ? 'bg-slate-100/20' : ''
       }`}
       onClick={handleClick}
+      ref={btnRef}
     >
       <Image
         src={ControlCenterImage}
@@ -54,6 +60,7 @@ export default function ControlCenter() {
       <AnimatePresence>
         {isVisible && (
           <motion.div
+            ref={ref}
             initial="hidden"
             animate="visible"
             exit="hidden"

@@ -46,7 +46,9 @@ export default function Login() {
     setShowInput(true);
 
     if (inputRef) {
-      inputRef.current?.focus();
+      setTimeout(() => {
+        inputRef.current?.focus();
+      }, 500);
     }
   };
 

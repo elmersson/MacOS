@@ -1,7 +1,8 @@
 import { MenuVariants } from '@/configs/animations';
+import { useClickOutside } from '@/hooks/useClickOutside';
 import { useStore } from '@/lib/store';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { BsShift } from 'react-icons/bs';
 import {
   IoChevronForwardOutline,
@@ -13,6 +14,8 @@ import { LuCommand, LuOption, LuPower } from 'react-icons/lu';
 export default function Apple() {
   const [isVisible, setIsVisible] = useState<Boolean>(false);
   const { setBooted, setLogedIn } = useStore();
+  const ref = useRef<HTMLDivElement>(null);
+  const btnRef = useRef<HTMLDivElement>(null);
 
   const handleVisibility = () => {
     setIsVisible(!isVisible);
@@ -26,6 +29,9 @@ export default function Apple() {
   const handleSignOut = () => {
     setLogedIn(false);
   };
+
+  useClickOutside(ref, handleVisibility, [btnRef]);
+
   return (
     <div>
       <div
@@ -33,6 +39,7 @@ export default function Apple() {
           isVisible ? 'bg-slate-100/20' : ''
         }`}
         onClick={handleVisibility}
+        ref={btnRef}
       >
         <div className=" drop-shadow-lg">
           <IoLogoApple
@@ -51,6 +58,7 @@ export default function Apple() {
             exit="hidden"
             variants={MenuVariants}
             className="fixed top-11 left-[4px] z-50 overflow-hidden shadow-lg menubg"
+            ref={ref}
           >
             <div className="w-72 flex flex-col ">
               <div className="menuItem">
