@@ -53,9 +53,9 @@ export default function Login() {
   };
 
   return (
-    <div className="h-screen flex flex-col" onClick={handleClickOnScreen}>
+    <div className="h-full flex flex-col" onClick={handleClickOnScreen}>
       <Navbar />
-      <div className="flex flex-col h-full justify-between">
+      <div className="flex flex-col">
         <div className="flex flex-col items-center mt-10">
           <text className="text-[2rem] font-bold text-teal-100 mix-blend-overlay text-shadow">
             {timeObject.dayOfWeek}, {timeObject.dayOfMonth} {timeObject.month}
@@ -64,7 +64,7 @@ export default function Login() {
             {timeObject.time}
           </text>
         </div>
-        <div className="flex flex-col items-center mb-36">
+        <div className="flex flex-col items-center mt-[55vh]">
           <div className="w-20 h-20 bg-slate-700 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 rounded-full p-2">
             <Image
               src={ProfileImage}
@@ -76,7 +76,7 @@ export default function Login() {
             />
           </div>
           {!showInput ? (
-            <p className="text-white font-semibold text-sm text-shadow-lg h-6 px-2 mt-2">
+            <p className="text-white font-semibold text-md text-shadow-lg h-6 px-2 mt-2">
               Rasmus Elmersson
             </p>
           ) : (
@@ -98,11 +98,11 @@ export default function Login() {
           )}
 
           {isPasswordCorrect ? (
-            <p className="text-white text-shadow-lg mt-1 text-xs">
+            <p className="text-white text-shadow-lg mt-1 text-sm">
               Enter Password
             </p>
           ) : (
-            <p className="text-white/80 text-shadow-lg mt-1 text-xs">
+            <p className="text-white/80 text-shadow-lg mt-1 text-sm">
               Test {password}
             </p>
           )}
