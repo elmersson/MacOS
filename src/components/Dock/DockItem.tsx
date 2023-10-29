@@ -29,7 +29,7 @@ export default function DockItem({ id, title, img }: AppData) {
     >
       <div className="flex flex-col items-center relative">
         <motion.div
-          className={`absolute bg-clip-padding backdrop-filter backdrop-blur-md top-[-60px] bg-neutral-300/60 text-sm ${
+          className={`absolute bg-clip-padding backdrop-filter backdrop-blur-md top-[-60px] bg-neutral-300 text-sm ${
             isHovered ? 'opacity-100' : 'opacity-0'
           } transition-all duration-100 py-1 px-2 rounded-md`}
         >
