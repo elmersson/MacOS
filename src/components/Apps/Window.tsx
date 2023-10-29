@@ -68,7 +68,7 @@ export default function Window() {
       minHeight={150}
     >
       <div
-        className="items-center bg-[#3c3c3c] rounded-t-md py-1 flex flex-row round"
+        className="items-center bg-[#3c3c3c] rounded-t-md py-2 flex flex-row round"
         onDoubleClick={handleDoubleClick}
       >
         <div
