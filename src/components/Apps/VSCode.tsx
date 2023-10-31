@@ -5,20 +5,20 @@ import { PiMinusBold } from 'react-icons/pi';
 import { RiExpandLeftRightFill } from 'react-icons/ri';
 import useScreenSize from '@/hooks/useScreenSize';
 
-interface WindowState {
+interface VSCodeState {
   width: number;
   height: number;
   x: number;
   y: number;
 }
-export default function Window() {
+export default function VSCode() {
   const { scrHeight, scrWidth } = useScreenSize();
   const [hovered, setHovered] = useState(false);
 
   const initWidth = Math.min(scrWidth, 640);
   const initHeight = Math.min(scrHeight, 400);
 
-  const [state, setState] = useState<WindowState>({
+  const [state, setState] = useState<VSCodeState>({
     width: initWidth,
     height: initHeight * 2,
     x: scrWidth / 4,
