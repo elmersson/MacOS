@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { AppData } from '@/data/Apps';
 
-export default function DockItem({ id, title, img }: AppData) {
+export default function DockItem({ id, title, img, url }: AppData) {
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
-    setIsActive(!isActive);
+    if (url) {
+      const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+      if (newWindow) newWindow.opener = null;
+    } else {
+      setIsActive(!isActive);
+    }
   };
 
   return (

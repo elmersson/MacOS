@@ -12,6 +12,7 @@ export interface AppData {
   id: string;
   title: string;
   img: StaticImageData;
+  url?: string;
 }
 
 const apps: AppData[] = [
@@ -49,6 +50,7 @@ const apps: AppData[] = [
     id: 'github',
     title: 'Github',
     img: Github,
+    url: 'https://github.com/elmersson',
   },
   {
     id: 'notes',
