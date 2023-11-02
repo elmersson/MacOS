@@ -30,12 +30,12 @@
   - [ ] Outlook
   - [ ] Arc
   - [ ] Linear
+  - [x] Github
 - [ ] Playwright
   - [x] Has title
-  - [ ] Boot
+  - [x] Boot
   - [ ] SignIn
   - [ ] LogedIn
-- [ ] Window
 
 ## Tech-stack
 
