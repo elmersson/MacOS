@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { AppData } from '@/data/Apps';
+import { useStore } from '@/lib/store';
 
 export default function DockItem({ id, title, img, url }: AppData) {
   const [isActive, setIsActive] = useState(false);
+  const { showVSCode, setShowVSCode } = useStore();
 
   const handleClick = () => {
     if (url) {
@@ -11,12 +13,13 @@ export default function DockItem({ id, title, img, url }: AppData) {
       if (newWindow) newWindow.opener = null;
     } else {
       setIsActive(!isActive);
+      setShowVSCode(true);
     }
   };
 
   return (
     <li
-      className="flex justify-center relative group"
+      className="flex justify-center relative group overflow-hidden no-scrollbar"
       id={id}
       onClick={handleClick}
     >
@@ -30,7 +33,7 @@ export default function DockItem({ id, title, img, url }: AppData) {
         <Image src={img} alt={title} className="w-14" />
         <div
           className={`h-1 w-1 m-0 rounded-full bg-slate-950/80 dark:bg-slate-50/80 mt-1 ${
-            isActive ? 'opacity-100' : 'opacity-0'
+            showVSCode ? 'opacity-100' : 'opacity-0'
           } transition-all duration-100`}
         />
       </div>

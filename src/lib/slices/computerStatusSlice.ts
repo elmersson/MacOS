@@ -26,6 +26,8 @@ export interface ComputerStatus {
     setWeather: (weather: WeatherData) => void
     nameOfTheDay: string[]
     setNameOfTheDay: (nameOfTheDay: string[]) => void
+    showVSCode: boolean
+    setShowVSCode: (showVSCode: boolean) => void
 }
 
 export const computerStatusSlice: StateCreator<ComputerStatus> = (set) => ({
@@ -51,4 +53,6 @@ export const computerStatusSlice: StateCreator<ComputerStatus> = (set) => ({
     setWeather: (weather: WeatherData) => set({weather}),
     nameOfTheDay: [],
     setNameOfTheDay: (nameOfTheDay: string[]) => set({nameOfTheDay}),
+    showVSCode: false,
+    setShowVSCode: (showVSCode: boolean) => set({ showVSCode }),
 })

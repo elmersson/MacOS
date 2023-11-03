@@ -4,6 +4,7 @@ import { RxCross2 } from 'react-icons/rx';
 import { PiMinusBold } from 'react-icons/pi';
 import { RiExpandLeftRightFill } from 'react-icons/ri';
 import useScreenSize from '@/hooks/useScreenSize';
+import { useStore } from '@/lib/store';
 
 interface VSCodeState {
   width: number;
@@ -12,6 +13,8 @@ interface VSCodeState {
   y: number;
 }
 export default function VSCode() {
+  const { setShowVSCode } = useStore();
+
   const { scrHeight, scrWidth } = useScreenSize();
   const [hovered, setHovered] = useState(false);
 
@@ -34,7 +37,7 @@ export default function VSCode() {
   }, [scrWidth, scrHeight, state]);
 
   const handleDoubleClick = () => {
-    setState({ width: scrWidth, height: scrHeight * 2, x: 0, y: 11 });
+    setState({ width: scrWidth - 10, height: scrHeight - 88, x: 0, y: 44 });
   };
 
   const fullSize = () => {
@@ -44,6 +47,10 @@ export default function VSCode() {
       x: 0,
       y: 44,
     });
+  };
+
+  const handleExit = () => {
+    setShowVSCode(false);
   };
 
   return (
@@ -76,7 +83,10 @@ export default function VSCode() {
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
-          <div className="rounded-full h-3 w-3 bg-[#FF6157] border-[#E24640] mx-2 flex justify-center items-center">
+          <div
+            className="rounded-full h-3 w-3 bg-[#FF6157] border-[#E24640] mx-2 flex justify-center items-center"
+            onClick={handleExit}
+          >
             {hovered && (
               <RxCross2
                 style={{ color: 'text-slate-900', fontSize: '0.55rem' }}
