@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { Rnd } from 'react-rnd';
 import useScreenSize from '@/hooks/useScreenSize';
 import { useStore } from '@/lib/store';
+import { useEffect, useState } from 'react';
+import { Rnd } from 'react-rnd';
 import ActionButtons from './ActionButtons';
+import { AiOutlineNotification } from 'react-icons/ai';
+import { IoNotificationsOutline } from 'react-icons/io5';
 
-interface VSCodeState {
+interface OutlookState {
   width: number;
   height: number;
   x: number;
   y: number;
 }
-export default function VSCode() {
+
+export default function Outlook() {
   const { setShowVSCode } = useStore();
 
   const { scrHeight, scrWidth } = useScreenSize();
@@ -18,7 +21,7 @@ export default function VSCode() {
   const initWidth = Math.min(scrWidth, 640);
   const initHeight = Math.min(scrHeight, 400);
 
-  const [state, setState] = useState<VSCodeState>({
+  const [state, setState] = useState<OutlookState>({
     width: initWidth,
     height: initHeight * 2,
     x: scrWidth / 4,
@@ -72,18 +75,25 @@ export default function VSCode() {
       minHeight={150}
     >
       <div
-        className="items-center bg-[#3c3c3c] rounded-t-md py-2 flex flex-row round"
+        className="bg-slate-800 rounded-t-md py-2 flex flex-row items-center justify-between"
         onDoubleClick={handleDoubleClick}
       >
-        <ActionButtons exit={handleExit} fullSize={fullSize} />
+        <div className="flex">
+          <ActionButtons exit={handleExit} fullSize={fullSize} />
+        </div>
+        <div>
+          <input
+            placeholder="Search"
+            className="bg-[#3c3c3c] text-sm rounded-lg"
+          />
+        </div>
+        <div className="flex flex-row text-white space-x-1 mx-2">
+          <AiOutlineNotification />
+          <IoNotificationsOutline />
+        </div>
       </div>
-      <div className="w-full h-full bg-black">
-        <iframe
-          className="w-full h-full bg-black"
-          title="github"
-          src="https://github1s.com/elmersson/MacOS"
-        />
-      </div>
+
+      <div className="w-full h-full bg-black"></div>
     </Rnd>
   );
 }
