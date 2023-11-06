@@ -13,7 +13,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { FiEdit } from 'react-icons/fi';
 import { HiOutlineTrash } from 'react-icons/hi';
 import { RiFolderSharedLine } from 'react-icons/ri';
-import { GoUnread } from 'react-icons/go';
+import { GoChevronDown, GoChevronRight, GoUnread } from 'react-icons/go';
 import { LuPanelRightClose } from 'react-icons/lu';
 
 interface OutlookState {
@@ -61,6 +61,16 @@ export default function Outlook() {
 
   const handleExit = () => {
     setShowVSCode(false);
+  };
+
+  const [expandedItems, setExpandedItems] = useState<number[]>([]);
+
+  const toggleAccordionItem = (index: number) => {
+    if (expandedItems.includes(index)) {
+      setExpandedItems(expandedItems.filter((item) => item !== index));
+    } else {
+      setExpandedItems([...expandedItems, index]);
+    }
   };
 
   return (
@@ -162,13 +172,40 @@ export default function Outlook() {
           </div>
 
           <div className="flex flex-row h-full w-full space-x-2">
-            <div className="flex flex-col">
-              <span>Favorites</span>
-              <span>All Accounts</span>
-              <span>Rasmus.elmersson@regent.se</span>
-              <span>Rasmus.elmersson@martinservera.se</span>
-              <span>Saved Searched</span>
-              <span>On my Computer</span>
+            <div className="space-y-4">
+              {accordionData.map((accordionItem, index) => (
+                <div key={index}>
+                  <button
+                    className="font-semibold flex flex-row items-center"
+                    onClick={() => toggleAccordionItem(index)}
+                  >
+                    {expandedItems.includes(index) ? (
+                      <GoChevronDown
+                        style={{ fontSize: '20px', marginRight: '5px' }}
+                      />
+                    ) : (
+                      <GoChevronRight
+                        style={{ fontSize: '20px', marginRight: '5px' }}
+                      />
+                    )}
+                    {accordionItem.title}
+                  </button>
+                  <div
+                    className={
+                      expandedItems.includes(index) ? 'p-2' : 'hidden p-2'
+                    }
+                    id={`accordion-content-${index}`}
+                  >
+                    <div className="space-y-2">
+                      {accordionItem.items.map((item, itemIndex) => (
+                        <div key={itemIndex}>
+                          <span className="text-sm">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
 
             <div className="h-full bg-slate-700 p-2 rounded-lg">
@@ -188,3 +225,84 @@ export default function Outlook() {
     </Rnd>
   );
 }
+
+const accordionData = [
+  {
+    title: 'Favorites',
+    items: [
+      'Inbox',
+      'Drafts',
+      'Archive',
+      'Sent',
+      'Deleted Items',
+      'Junk Email',
+      'Outbox',
+      'Snoozed',
+    ],
+  },
+  {
+    title: 'All Accounts',
+    items: [
+      'Inbox',
+      'Drafts',
+      'Archive',
+      'Sent',
+      'Deleted Items',
+      'Junk Email',
+      'Outbox',
+      'Snoozed',
+    ],
+  },
+  {
+    title: 'Rasmus.elmersson@regent.se',
+    items: [
+      'Inbox',
+      'Drafts',
+      'Archive',
+      'Sent',
+      'Deleted Items',
+      'Junk Email',
+      'Outbox',
+      'Snoozed',
+    ],
+  },
+  {
+    title: 'Rasmus.elmersson@martinservera.se',
+    items: [
+      'Inbox',
+      'Drafts',
+      'Archive',
+      'Sent',
+      'Deleted Items',
+      'Junk Email',
+      'Outbox',
+      'Snoozed',
+    ],
+  },
+  {
+    title: 'Saved Searches',
+    items: [
+      'Inbox',
+      'Drafts',
+      'Archive',
+      'Sent',
+      'Deleted Items',
+      'Junk Email',
+      'Outbox',
+      'Snoozed',
+    ],
+  },
+  {
+    title: 'On my Computer',
+    items: [
+      'Inbox',
+      'Drafts',
+      'Archive',
+      'Sent',
+      'Deleted Items',
+      'Junk Email',
+      'Outbox',
+      'Snoozed',
+    ],
+  },
+];
