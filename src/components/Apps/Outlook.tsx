@@ -15,6 +15,7 @@ import { HiOutlineTrash } from 'react-icons/hi';
 import { RiFolderSharedLine } from 'react-icons/ri';
 import { GoChevronDown, GoChevronRight, GoUnread } from 'react-icons/go';
 import { LuPanelRightClose } from 'react-icons/lu';
+import GoogleCalendarView from '../Navbar/GoogleCalendarView';
 
 interface OutlookState {
   width: number;
@@ -217,7 +218,7 @@ export default function Outlook() {
             </div>
 
             <div className="h-full bg-slate-700 p-2 rounded-lg">
-              <span>Focused</span> <span>Other</span>
+              <GoogleCalendarView />
             </div>
           </div>
         </div>
