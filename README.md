@@ -7,7 +7,7 @@
 ### :male_detective: Project:
 
 - [ ] Decide test-flow
-  - [ ] Boot
+  - [x] Boot
   - [ ] LogIn
   - [ ] Desktop  
 
