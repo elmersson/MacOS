@@ -94,9 +94,6 @@ export default function Outlook() {
           ...position,
         });
       }}
-      minWidth={400}
-      minHeight={150}
-    >
       <div
         className=" bg-blue-400 rounded-t-md py-2 flex flex-row items-center justify-between overflow-hidden"
         onDoubleClick={handleDoubleClick}
