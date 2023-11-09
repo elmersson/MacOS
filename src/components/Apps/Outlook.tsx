@@ -16,6 +16,8 @@ import { RiFolderSharedLine } from 'react-icons/ri';
 import { GoChevronDown, GoChevronRight, GoUnread } from 'react-icons/go';
 import { LuPanelRightClose } from 'react-icons/lu';
 import GoogleCalendarView from '../Navbar/GoogleCalendarView';
+import Image from 'next/image';
+import ProfileImage from '@/assets/images/ProfileImage.png';
 
 interface OutlookState {
   width: number;
@@ -92,11 +94,11 @@ export default function Outlook() {
           ...position,
         });
       }}
-      minWidth={200}
+      minWidth={400}
       minHeight={150}
     >
       <div
-        className=" bg-blue-400 rounded-t-md py-2 flex flex-row items-center justify-between"
+        className=" bg-blue-400 rounded-t-md py-2 flex flex-row items-center justify-between overflow-hidden"
         onDoubleClick={handleDoubleClick}
       >
         <div className="flex">
@@ -209,8 +211,39 @@ export default function Outlook() {
               ))}
             </div>
 
-            <div className="h-full bg-slate-700 p-2 rounded-lg">
-              <span>Focused</span> <span>Other</span>
+            <div className="h-full bg-slate-700 rounded-lg">
+              <div className="text-sm font-semibold p-2">
+                <span>Focused</span>
+                <span>Other</span>
+              </div>
+
+              <div className="bg-slate-600">
+                <span className="text-sm ml-2">Today</span>
+              </div>
+
+              <div className="flex flex-row items-center">
+                <div className="w-20 h-20 bg-slate-700 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 rounded-full p-2">
+                  <Image
+                    src={ProfileImage}
+                    alt="account image"
+                    className="rounded-full drop-shadow"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-sm font-semibold text-white">
+                    Linus Nordenbring
+                  </span>
+                  <span className="text-xs font-semibold text-white">
+                    Bekräftelse: Jul...
+                  </span>
+                  <span className="text-xs text-white">
+                    Hej Rasmus tack för din an...
+                  </span>
+                </div>
+              </div>
             </div>
 
             <div className="h-full bg-slate-700 p-2 rounded-lg">
