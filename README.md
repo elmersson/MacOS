@@ -13,14 +13,6 @@
 
 ### :art: Figma:
 
-- [ ] Apps
-  - [ ] Finder
-  - [ ] VSCode
-  - [ ] Teams
-  - [ ] Outlook
-  - [ ] Arc
-  - [ ] Linear
-
 ### :technologist: Frontend:
 
 - [ ] Apps
