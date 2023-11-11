@@ -20,6 +20,7 @@
   - [x] VSCode
   - [ ] Teams
   - [ ] Outlook
+    - [ ] Send email
   - [ ] Arc
   - [ ] Linear
   - [x] Github
