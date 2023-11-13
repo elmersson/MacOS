@@ -1,6 +1,7 @@
 # :computer: MacOS
 
 ## Description
+A personal website made to look like my current OS running on my Macbook.
 
 ## Todo
 
