@@ -20,8 +20,7 @@ A personal website made to look like my current OS running on my Macbook.
   - [ ] Finder
   - [x] VSCode
   - [ ] Teams
-  - [ ] Outlook
-    - [ ] Send email
+  - [ ] [Outlook](https://github.com/elmersson/MailClient)
   - [ ] Arc
   - [ ] Linear
   - [x] Github
